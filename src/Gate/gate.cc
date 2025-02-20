@@ -44,6 +44,7 @@ Gate (){
     gateType = NA;
     gateId = -1;
     inputCount = 0;
+    m_mapped = false;
 }
 
 Gate :: 

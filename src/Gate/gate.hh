@@ -14,6 +14,7 @@ enum GateType {
     OR2,
     NOR2,
     AOI21,
+    AOI21_ROTATED,
     AOI22,
     NA
 
@@ -48,6 +49,7 @@ class Gate {
 
     GateType gateType;
     int gateId;
+    bool m_mapped;
     
     // Output side
     //GatePtr outputGate;
