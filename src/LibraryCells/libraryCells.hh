@@ -9,10 +9,10 @@
 #define NOT_GATE_COST 2
 #define NAND_GATE_COST 3
 #define AND_GATE_COST 4
-#define NOR_GATE_COST 5
-#define OR_GATE_COST 6
-#define AOI21_GATE_COST 4
-#define AOI22_GATE_COST 5;
+#define NOR_GATE_COST 6
+#define OR_GATE_COST 4
+#define AOI21_GATE_COST 7
+#define AOI22_GATE_COST 7
 
 typedef Gate* GatePtr;
 
