@@ -38,6 +38,7 @@ class LibraryCells {
     GatePtr createNorGate();
     GatePtr createOrGate();
     GatePtr createAOI21();
+    GatePtr createAOI21_rotated();
     GatePtr createAOI22();
 
     void print();

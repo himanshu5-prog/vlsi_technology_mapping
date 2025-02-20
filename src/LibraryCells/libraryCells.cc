@@ -135,6 +135,42 @@ LibraryCells :: createAOI21() {
     return outputPad;
 }
 
+
+GatePtr
+LibraryCells :: createAOI21_rotated() {
+    GatePtr outputPad = createPrimitivePad (0, OUTPUT);
+    GatePtr notGate_1 = createPrimitiveNotGate(1);
+
+    outputPad->addInputGate(notGate_1);
+
+    GatePtr nandGate_1 = createPrimitiveNandGate(2);
+    
+    notGate_1->addInputGate(nandGate_1);
+
+    GatePtr nandGate_2 = createPrimitiveNandGate(3);
+    GatePtr notGate_2 = createPrimitiveNotGate(4);
+
+    // Just need to re-arrange how nandGate_2 and notgate_2 are connected
+    // to nandGate_1
+    //nandGate_1->addInputGate(nandGate_2);
+    //nandGate_1->addInputGate(notGate_2);
+
+    nandGate_1->addInputGate(notGate_2);
+    nandGate_1->addInputGate(nandGate_2);
+    
+    GatePtr inputPad_1 = createPrimitivePad(5, INPUT);
+    GatePtr inputPad_2 = createPrimitivePad(6, INPUT);
+
+    nandGate_2->addInputGate(inputPad_1);
+    nandGate_2->addInputGate(inputPad_2);
+
+    GatePtr inputPad_3 = createPrimitivePad(7, INPUT);
+
+    notGate_2->addInputGate(inputPad_3);
+
+    return outputPad;
+}
+
 GatePtr
 LibraryCells :: createAOI22() {
     GatePtr outputPad = createPrimitivePad (0, OUTPUT);
@@ -206,6 +242,11 @@ LibraryCells :: init() {
    t.root = createAOI22();
    t.cost = AOI22_GATE_COST;
    t.name = AOI22;
+   techCell.push_back(t);
+
+   t.root = createAOI21_rotated();
+   t.cost = AOI21_GATE_COST;
+   t.name = AOI21_ROTATED;
    techCell.push_back(t);
 
    cellCount = techCell.size();
