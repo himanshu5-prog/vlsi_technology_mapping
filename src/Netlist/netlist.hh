@@ -18,6 +18,7 @@ class Netlist {
     void createNetlist();
     void createNetlist_2();
     void print();
+    std :: vector <GatePtr> getRootNetlist();
 };
 
 #endif
