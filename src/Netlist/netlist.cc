@@ -5,7 +5,7 @@ Netlist::Netlist(){
     m_gateID = 0;
 }
 
-std :: vector <GatePtr>
+GatePtr
 Netlist :: getRootNetlist(){
     return m_rootNetlist;
 }
@@ -94,18 +94,14 @@ Netlist :: createNetlist_2(){
     nandGate[10]->addInputGate(inputPad[11]);
     
     // Output pad is the root to the tree. Adding the root to class member variable
-    m_rootNetlist.push_back(outputPad);
+    m_rootNetlist = (outputPad);
 }
 
 void
 Netlist::print(){
-    for (const GatePtr elem: m_rootNetlist){
-        elem->printGate();
-    }
+   m_rootNetlist->printGate();
 }
 
 Netlist:: ~Netlist(){
-    for (auto elem: m_rootNetlist){
-        delete elem;
-    }
+    delete m_rootNetlist;
 }

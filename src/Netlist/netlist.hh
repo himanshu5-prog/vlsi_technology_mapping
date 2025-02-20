@@ -7,7 +7,7 @@
 
 typedef Gate* GatePtr;
 class Netlist {
-  std :: vector <GatePtr> m_rootNetlist;
+  GatePtr m_rootNetlist;
   int m_groupCount;
   int m_gateID;
 
@@ -18,7 +18,7 @@ class Netlist {
     void createNetlist();
     void createNetlist_2();
     void print();
-    std :: vector <GatePtr> getRootNetlist();
+    GatePtr getRootNetlist();
 };
 
 #endif
