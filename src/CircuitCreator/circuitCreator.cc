@@ -170,3 +170,38 @@ GateStats* getStats(GatePtr gate){
 
     return stats;    
 }
+
+void traverseGateHash (GatePtr gate, GateHashMap& record){
+
+    record.insert({gate, gate->getInputGate()});
+
+    for (auto elem: gate->getInputGate()){
+        traverseGateHash(elem, record);
+    }
+}
+
+GateHashMap createHashMap(GatePtr gate){
+    GateHashMap record;
+    traverseGateHash(gate, record);
+    return record;
+}
+
+void printGateHash (GateHashMap gateHash){
+    GateHashMap :: iterator itr;
+    GatePtr currentGate;
+    std :: vector <GatePtr> vectInputGate;
+    for (itr = gateHash.begin(); itr != gateHash.end(); ++itr){
+        currentGate = itr->first;
+        std :: cout << "---------------------------------------------------------------------------------------------------------------------------\n";
+        std :: cout << "current gate id: " << currentGate->getGateId() << ", gate type: " << getStringGateType(currentGate->getGateType()) << "\n";
+        std :: cout << "input gate count: " << currentGate->getInputCount() << "\n";
+
+        if (currentGate->getInputCount() > 0){
+            std :: cout << "Input gates:\n";
+        }
+        for (GatePtr elem: itr->second){
+            std :: cout << "Gate id: " << elem->getGateId() << ", gate type: " << getStringGateType(elem->getGateType()) << "\n";
+        }
+         std :: cout << "---------------------------------------------------------------------------------------------------------------------------\n";
+    }
+}
