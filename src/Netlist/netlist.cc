@@ -11,6 +11,26 @@ Netlist :: getRootNetlist(){
 }
 
 void
+Netlist :: createSimpleCircuit(){
+    int gateId = 0;
+
+    // Create output pad. Each netlist will have only 1 output pad
+    GatePtr outputPad = createPrimitivePad(100, OUTPUT);
+    
+    GatePtr notGate = createPrimitiveNotGate(101);
+    GatePtr nandGate = createPrimitiveNandGate(102);
+    outputPad->addInputGate(notGate);
+
+    notGate->addInputGate(nandGate);
+
+    GatePtr inputPad_0 = createPrimitivePad(103,INPUT);
+    GatePtr inputPad_1 = createPrimitivePad(104, INPUT);
+
+    nandGate->addInputGate(inputPad_0);
+    nandGate->addInputGate(inputPad_1);
+    m_rootNetlist = (outputPad);
+}
+void
 Netlist :: createNetlist_2(){
     // Unique gate id for each gate
     int gateId = 0;    
@@ -103,5 +123,5 @@ Netlist::print(){
 }
 
 Netlist:: ~Netlist(){
-    delete m_rootNetlist;
+    //delete m_rootNetlist;
 }

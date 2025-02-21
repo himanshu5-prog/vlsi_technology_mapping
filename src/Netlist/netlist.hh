@@ -14,9 +14,9 @@ class Netlist {
   public:
     Netlist();
     ~Netlist();
-    GatePtr createGate (GateType type);
-    void createNetlist();
     void createNetlist_2();
+    void createSimpleCircuit();
+
     void print();
     GatePtr getRootNetlist();
 };
