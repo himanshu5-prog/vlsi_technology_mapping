@@ -26,6 +26,9 @@ std :: string getStringGateType(GateType g){
         case AOI21:
             strGate = "AOI21";
             break;
+        case AOI21_ROTATED:
+            strGate = "AOI21_ROTATED";
+            break;
         case NAND2:
             strGate = "NAND2";
             break;
