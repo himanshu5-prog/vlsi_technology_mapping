@@ -25,7 +25,7 @@ struct TechCell {
 
 class LibraryCells {
     int cellCount;
-    std :: vector <TechCell> techCell;
+    std :: vector <TechCell> techCell; 
     public:
 
     LibraryCells();
@@ -42,6 +42,7 @@ class LibraryCells {
     GatePtr createAOI22();
 
     void print();
+    std :: vector <TechCell> getTechCell();
 
 };
 #endif

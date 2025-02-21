@@ -5,9 +5,11 @@ LibraryCells :: LibraryCells (){
 }
 
 LibraryCells :: ~LibraryCells(){
+    /*
     for (auto elem: techCell){
         delete elem.root;
     }
+    */
 }
 
 GatePtr
@@ -263,4 +265,9 @@ LibraryCells :: print(){
         std :: cout << "------------------------------------------------------\n";
     }
     
+}
+
+std :: vector <TechCell>
+LibraryCells :: getTechCell(){
+    return techCell;
 }
