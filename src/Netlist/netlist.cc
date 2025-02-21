@@ -30,6 +30,36 @@ Netlist :: createSimpleCircuit(){
     nandGate->addInputGate(inputPad_1);
     m_rootNetlist = (outputPad);
 }
+
+void
+Netlist :: createLogicAOI21Rotated(){
+    int gateId = 100;
+    GatePtr outputPad = createPrimitivePad(100, OUTPUT);
+    GatePtr notGate = createPrimitiveNotGate(101);
+    GatePtr nandGate = createPrimitiveNandGate(102);
+
+    outputPad->addInputGate(notGate);
+    notGate->addInputGate(nandGate);
+
+    GatePtr notGate_1 = createPrimitiveNotGate(103);
+    GatePtr nandGate_1 = createPrimitiveNandGate(104);
+
+    nandGate->addInputGate(notGate_1);
+    nandGate->addInputGate(nandGate_1);
+
+    GatePtr inputpad_1 = createPrimitivePad(105, INPUT);
+    GatePtr inputpad_2 = createPrimitivePad(106, INPUT);
+    GatePtr inputpad_3 = createPrimitivePad(107, INPUT);
+
+    notGate_1->addInputGate(inputpad_1);
+
+    nandGate_1->addInputGate(inputpad_2);
+    nandGate_1->addInputGate(inputpad_3);
+
+    m_rootNetlist = outputPad;
+
+    
+}
 void
 Netlist :: createNetlist_2(){
     // Unique gate id for each gate

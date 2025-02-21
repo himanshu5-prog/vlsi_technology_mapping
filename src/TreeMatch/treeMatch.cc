@@ -25,7 +25,8 @@ TreeMatch :: init(){
 
     //Creating Netlist
     Netlist netlist;
-    netlist.createNetlist_2();
+    netlist.createLogicAOI21Rotated();
+    //netlist.createNetlist_2();
     //netlist.createSimpleCircuit();
     m_inputNetlist = netlist.getRootNetlist();
     //-------------------------------------
@@ -37,10 +38,6 @@ TreeMatch :: init(){
 
 void
 TreeMatch :: doMatching(){
-
-    
-    
-   
     GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
     
     for(auto cell: m_techCells){
