@@ -1,18 +1,13 @@
 #include <iostream>
-#include "Netlist/netlist.hh"
-#include "LibraryCells/libraryCells.hh"
-
+#include "TreeMatch/treeMatch.hh"
 int main(){
   
-    LibraryCells lib;
+    TreeMatch techMap;
 
-    lib.init();
-    lib.print();
-
-    //Netlist netlist;
-    //netlist.createNetlist_2();
-    //netlist.print();
-
+    techMap.init();
+    techMap.doMatching();
+    techMap.print();
+    
     return 0;
 
 }
