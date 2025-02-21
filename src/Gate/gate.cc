@@ -57,9 +57,11 @@ Gate(GateType g, int id, GatePtr outGate, int ipCount, std :: vector <GatePtr> i
 }
 
 Gate :: ~Gate(){
+    /*
     for (auto elem: inputGate){
         delete elem;
     }
+    */
 }
 
 void Gate :: printGate(){
