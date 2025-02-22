@@ -12,9 +12,11 @@ Use this command:
 
 > source run.tcl # For compilation
 
-> ./bin/techmap -v # To run the code with debug mode enabled
+> ./bin/techmap -v  # To run the code with debug mode enabled
+
 OR
-> ./bin/techmap $ To run with debug mode disabled
+
+> ./bin/techmap  #To run with debug mode disabled
 
 -> Here is the brief explanation of source code:
 
