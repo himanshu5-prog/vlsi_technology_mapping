@@ -3,6 +3,7 @@
 TreeMatch ::
 TreeMatch(){
     m_inputNetlist = nullptr;
+    m_debugMode = false;
 }
 
 TreeMatch ::
@@ -15,14 +16,18 @@ TreeMatch :: init(){
     //Creating cell library
     LibraryCells lib;
     lib.init();
+    lib.print();
     m_techCells = lib.getTechCell();
     //----------------------
 
     //Creating Netlist
     Netlist netlist;
     //netlist.createLogicAOI21Rotated();
-    netlist.createNetlist_2();
+    netlist.createSimpleNor();
+
+    //netlist.createNetlist_2();
     //netlist.createSimpleCircuit();
+    netlist.print();
     m_inputNetlist = netlist.getRootNetlist();
     //-------------------------------------
 
@@ -36,7 +41,10 @@ TreeMatch :: doMatching(){
     GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
     
     for(auto cell: m_techCells){
-        std :: cout << "doMatching :: techCell: " <<  getStringGateType (cell.name) << "\n";
+
+        if (m_debugMode){
+            std :: cout << "doMatching :: techCell: " <<  getStringGateType (cell.name) << "\n";
+        }
         GatePtr techCellGate = ((cell.root)->getInputGate())[0];
         traverseNetlist(cell, techCellGate, netListGate);
    }
@@ -46,13 +54,18 @@ void
 TreeMatch :: traverseNetlist (TechCell techCellMap,  GatePtr techCell, GatePtr currentNode){
 
     std :: vector <GatePtr> v;
-    std :: cout << "traverseNetlist :: Pre-matchTree. tech cell name: " << getStringGateType (techCell->getGateType()) << ", current gate: " 
-    << currentNode->getGateId() << ", gate type: "<< getStringGateType(currentNode->getGateType()) << "\n";
 
+    if (m_debugMode){
+        std :: cout << "traverseNetlist :: Pre-matchTree. tech cell name: " << getStringGateType (techCell->getGateType()) << ", current gate: " 
+        << currentNode->getGateId() << ", gate type: "<< getStringGateType(currentNode->getGateType()) << "\n";
+    }
     
     bool isMatch = matchTree(techCell, currentNode, v);
-    std :: cout << "traverseNetlist :: Matching cell id: " << currentNode->getGateId() << ", cell type: " << getStringGateType (currentNode->getGateType())
-    << " with tech cell: " <<  getStringGateType( techCell->getGateType()) << ", matched: " << isMatch<<"\n";
+
+    if (m_debugMode){
+        std :: cout << "traverseNetlist :: Matching cell id: " << currentNode->getGateId() << ", cell type: " << getStringGateType (currentNode->getGateType())
+        << " with tech cell: " <<  getStringGateType( techCell->getGateType()) << ", matched: " << isMatch<<"\n";
+    }
     MappedInfo m;
     if (isMatch){
         m.leafNode = v;
@@ -76,18 +89,28 @@ TreeMatch :: traverseNetlist (TechCell techCellMap,  GatePtr techCell, GatePtr c
 bool
 TreeMatch :: matchTree (GatePtr techCell, GatePtr netlist, std :: vector<GatePtr> &leafNode){
 
-    std :: cout << "matchTree :: current techCell: " << techCell->getGateId() << ", " << getStringGateType(techCell->getGateType())<<
-    ", netlist id: " << netlist->getGateId() << ", " << getStringGateType(netlist->getGateType()) << "\n";
+    if (m_debugMode){
+        std :: cout << "matchTree :: current techCell: " << techCell->getGateId() << ", " << getStringGateType(techCell->getGateType())<<
+        ", netlist id: " << netlist->getGateId() << ", " << getStringGateType(netlist->getGateType()) << "\n";
+    }
+
     if (techCell->getGateType() == INPUT){
-        std :: cout << "matchTree :: input pad found for techCell. netlist gate id: " << netlist->getGateId() << ", type: " 
-        << getStringGateType (netlist->getGateType()) << "\n";
+
+        if (m_debugMode){
+            std :: cout << "matchTree :: input pad found for techCell. netlist gate id: " << netlist->getGateId() << ", type: " 
+            << getStringGateType (netlist->getGateType()) << "\n";
+        }
         leafNode.push_back(netlist);
         return true;
     }
     
     if (techCell->getGateType() != netlist->getGateType()){
-        std :: cout << "matchTree :: Cell type is different. tech cell id: " << techCell->getGateId() << ", tech cell type: " 
-        << getStringGateType(techCell->getGateType()) << ", netlist gate id: " << netlist->getGateId() << ", type: " << getStringGateType(netlist->getGateType()) << "\n";
+
+        if (m_debugMode){
+            std :: cout << "matchTree :: Cell type is different. tech cell id: " << techCell->getGateId() << ", tech cell type: " 
+            << getStringGateType(techCell->getGateType()) << ", netlist gate id: " << netlist->getGateId() << ", type: " << getStringGateType(netlist->getGateType()) << "\n";
+        }
+
         return false;
     }
 
@@ -108,9 +131,11 @@ TreeMatch :: matchTree (GatePtr techCell, GatePtr netlist, std :: vector<GatePtr
 
 void
 TreeMatch :: print(){
+    std :: cout << "**********************************************************\n";
     std::cout << "valid mapping size: " << m_validMapping.size() << "\n";
     printMapping();
 
+    std :: cout << "**********************************************************\n";
     std :: cout << "Minimum cost: " << getMinCost() << "\n";
     printBestMapping();
     //assert (m_inputNetlist != nullptr);
@@ -204,6 +229,7 @@ TreeMatch :: calculateMinCost(GatePtr gate){
 
 void
 TreeMatch :: printBestMapping(){
+    std :: cout << "Printing Best mapping\n";
     GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
 
     traverseTree(netListGate);

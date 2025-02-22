@@ -14,6 +14,7 @@ struct MappedInfo {
 };
 class TreeMatch {
     std :: vector <TechCell> m_techCells;
+    bool m_debugMode;
     GatePtr m_inputNetlist;
     std :: map <GatePtr, std :: vector <MappedInfo> > m_validMapping;
     std :: map <GatePtr, int> minCost;
@@ -36,6 +37,7 @@ class TreeMatch {
         int getMinCost();
         int calculateMinCost(GatePtr gate);
         void traverseTree(GatePtr gate);
+        inline void setDebugMode(){m_debugMode = true;}
 
 };
 
