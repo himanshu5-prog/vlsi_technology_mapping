@@ -12,8 +12,6 @@ Netlist :: getRootNetlist(){
 
 void
 Netlist :: createSimpleCircuit(){
-    int gateId = 0;
-
     // Create output pad. Each netlist will have only 1 output pad
     GatePtr outputPad = createPrimitivePad(100, OUTPUT);
     
@@ -33,7 +31,6 @@ Netlist :: createSimpleCircuit(){
 
 void
 Netlist :: createLogicAOI21Rotated(){
-    int gateId = 100;
     GatePtr outputPad = createPrimitivePad(100, OUTPUT);
     GatePtr notGate = createPrimitiveNotGate(101);
     GatePtr nandGate = createPrimitiveNandGate(102);
@@ -80,19 +77,19 @@ Netlist :: createNetlist_2(){
     std :: vector<GatePtr> inputPad(12);
 
     // Creating Not gates
-    for (int i = 0; i < notGate.size(); ++i){
+    for (unsigned int i = 0; i < notGate.size(); ++i){
         notGate[i] = createPrimitiveNotGate(gateId);
         ++gateId;
     }
 
     // Creating Nand2 gates. Nand2 has 2 inputs.
-    for (int i = 0; i < nandGate.size(); ++i){
+    for (unsigned int i = 0; i < nandGate.size(); ++i){
         nandGate[i] = createPrimitiveNandGate(gateId);
         ++gateId;
     }
 
     // Creating Input pads
-    for (int i = 0; i < inputPad.size(); ++i){
+    for (unsigned int i = 0; i < inputPad.size(); ++i){
         inputPad[i] = createPrimitivePad(gateId, INPUT);
         ++gateId;
     }

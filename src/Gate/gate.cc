@@ -51,7 +51,7 @@ Gate (){
 }
 
 Gate :: 
-Gate(GateType g, int id, GatePtr outGate, int ipCount, std :: vector <GatePtr> inGate){
+Gate(GateType g, int id, int ipCount, std :: vector <GatePtr> inGate){
     gateType = g;
     gateId = id;
     inputCount = ipCount;

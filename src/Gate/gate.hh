@@ -61,7 +61,7 @@ class Gate {
 
     public:
         Gate();
-        Gate(GateType g, int id, GatePtr gPtr, int ipCount, std :: vector<GatePtr> inGate);
+        Gate(GateType g, int id, int ipCount, std :: vector<GatePtr> inGate);
         ~Gate();
         // Get methods
 

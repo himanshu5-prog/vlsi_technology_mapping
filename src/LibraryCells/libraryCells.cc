@@ -192,7 +192,7 @@ LibraryCells :: createAOI22() {
 
     std :: vector <GatePtr> inputPad(4,nullptr);
 
-    for(int i = 0; i < inputPad.size(); ++i){
+    for(unsigned long i = 0; i < inputPad.size(); ++i){
         inputPad[i] = createPrimitivePad(i+5, INPUT);
     }
 

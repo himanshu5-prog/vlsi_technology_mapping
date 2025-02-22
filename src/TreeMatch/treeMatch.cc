@@ -7,12 +7,7 @@ TreeMatch(){
 
 TreeMatch ::
 ~TreeMatch() {
-     m_inputNetlist = nullptr;
-    /*
-    for (auto elem: m_techCells){
-        delete elem.root;
-    }
-    */
+    delete m_inputNetlist;
 }
 
 void
@@ -25,8 +20,8 @@ TreeMatch :: init(){
 
     //Creating Netlist
     Netlist netlist;
-    netlist.createLogicAOI21Rotated();
-    //netlist.createNetlist_2();
+    //netlist.createLogicAOI21Rotated();
+    netlist.createNetlist_2();
     //netlist.createSimpleCircuit();
     m_inputNetlist = netlist.getRootNetlist();
     //-------------------------------------
@@ -104,7 +99,7 @@ TreeMatch :: matchTree (GatePtr techCell, GatePtr netlist, std :: vector<GatePtr
     if (techCell->getInputCount() == 1){
         return matchTree(t[0], n[0], leafNode);
     } else if (techCell->getInputCount() == 2){
-        return matchTree(t[0],n[0], leafNode) & matchTree(t[1],n[1], leafNode);
+        return matchTree(t[0],n[0], leafNode) && matchTree(t[1],n[1], leafNode);
     }
 
     assert (techCell->getInputCount() <= 2); 
@@ -124,7 +119,6 @@ TreeMatch :: print(){
 
 void
 TreeMatch :: printMapping(){
-    auto iterator = m_validMapping.begin();
     GatePtr netlistGate;
     std :: vector <MappedInfo> m;
     
@@ -183,8 +177,6 @@ TreeMatch :: calculateMinCost(GatePtr gate){
     int minimumCost = INT_MAX;
     int currentCost = 0;
     std :: vector<GatePtr> leafNodeVect;
-    GateType bestMappedCell;
-
     
     for (auto info : mappedInfo){
         currentCost = 0;
