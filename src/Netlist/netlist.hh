@@ -17,6 +17,7 @@ class Netlist {
     void createNetlist_2();
     void createSimpleCircuit();
     void createLogicAOI21Rotated();
+    void createSimpleNor();
     void print();
     GatePtr getRootNetlist();
 };

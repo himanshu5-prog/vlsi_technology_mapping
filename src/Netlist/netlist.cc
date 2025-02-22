@@ -144,9 +144,35 @@ Netlist :: createNetlist_2(){
     m_rootNetlist = (outputPad);
 }
 
+void Netlist :: createSimpleNor(){
+    GatePtr outputPad = createPrimitivePad(120, OUTPUT);
+    GatePtr notGate = createPrimitiveNotGate(121);
+
+    GatePtr nandGate = createPrimitiveNandGate(122);
+    GatePtr notGate_1 = createPrimitiveNotGate(123);
+    GatePtr notGate_2 = createPrimitiveNotGate(124);
+
+    outputPad->addInputGate(notGate);
+    notGate->addInputGate(nandGate);
+
+    nandGate->addInputGate(notGate_1);
+    nandGate->addInputGate(notGate_2);
+
+    GatePtr inputPad_1 = createPrimitivePad(125, INPUT);
+    GatePtr inputPad_2 = createPrimitivePad(126, INPUT);
+
+    notGate_1->addInputGate(inputPad_1);
+    notGate_2->addInputGate(inputPad_2);
+
+    m_rootNetlist = outputPad;
+}
+
 void
 Netlist::print(){
-   m_rootNetlist->printGate();
+    std:: cout << "****************************\n";
+    std::cout << "Printing Netlist:\n";
+    m_rootNetlist->printGate();
+    std :: cout << "****************************\n";
 }
 
 Netlist:: ~Netlist(){
