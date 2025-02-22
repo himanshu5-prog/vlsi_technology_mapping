@@ -128,3 +128,10 @@ Above, the minimum cost is 6 and we have mapped cell corresponding to each of th
 For Gate id: 121, we had NOT gate in input netlist and this gate is mapped to NOT gate from the technology cells.
 
 For gate id: 122, we had NAND2 gate in input netlist and this gate is mapped to OR2 gate in technology cell. If we look at the mapping list, we will see the OR2 gate has input pad in its input side, which are mentioned in next two cells.
+
+Reference:
+
+I took this Coursera course: VLSI: Logic to Layout and learnt about technology mapping. I really liked the course and wanted to implement something which uses knowledge of data structure and algorithm. The minimum cost tree covering is great application of tree data structure, dynamic programming and recursive algorithm.
+
+Link to course:
+https://www.coursera.org/learn/vlsi-cad-layout 
