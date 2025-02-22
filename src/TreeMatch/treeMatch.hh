@@ -20,8 +20,7 @@ class TreeMatch {
     std :: map <GatePtr, int> minCost;
     std :: map <GatePtr, MappedInfo> bestLibMapping;
     GateHashMap m_gateHashMap;
-    int getCost (TechCell techCell);
-    bool allInputPadFanIn(GatePtr gate);
+    int m_minimumCost;
 
     public:
         TreeMatch();
@@ -34,10 +33,13 @@ class TreeMatch {
         void print();
         void printMapping();
         void printBestMapping();
+        void performMinimumCostTreeCover();
         int getMinCost();
         int calculateMinCost(GatePtr gate);
         void traverseTree(GatePtr gate);
         inline void setDebugMode(){m_debugMode = true;}
+        bool allInputPadFanIn(GatePtr gate);
+        void run();
 
 };
 

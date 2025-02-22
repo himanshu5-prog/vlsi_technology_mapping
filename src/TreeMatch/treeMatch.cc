@@ -136,7 +136,7 @@ TreeMatch :: print(){
     printMapping();
 
     std :: cout << "**********************************************************\n";
-    std :: cout << "Minimum cost: " << getMinCost() << "\n";
+    std :: cout << "Minimum cost: " << m_minimumCost << "\n";
     printBestMapping();
     //assert (m_inputNetlist != nullptr);
     //m_inputNetlist->printGate();
@@ -252,4 +252,16 @@ TreeMatch :: traverseTree(GatePtr gate){
         }
     }
 
+}
+
+void
+TreeMatch :: performMinimumCostTreeCover(){
+    m_minimumCost = getMinCost();
+}
+
+void
+TreeMatch :: run(){
+    init();
+    doMatching();
+    performMinimumCostTreeCover();
 }
