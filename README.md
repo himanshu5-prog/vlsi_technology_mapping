@@ -1,4 +1,4 @@
-------------------------------------Technology Mapping----------------------------------
+# Technology Mapping using minimum cost tree-covering
 
 This repository implements technology mapping algorithm using minimum cost tree-covering.
 
@@ -6,7 +6,7 @@ Technology mapping takes synthesized netlist and convert into another netlist wh
 
 The input netlist and library cells are assumed to be a tree and contain just Not and Nand2 cells. Each technology cell is mapped to every node in input netlist and technology cells are used so that the cost is minimum. The cost can be area or delay or maybe some combination of these two metrics.
 
--> Compiling the code:
+## Compiling the code:
 
 Use this command:
 
@@ -18,7 +18,7 @@ OR
 
 > ./bin/techmap  #To run with debug mode disabled
 
--> Here is the brief explanation of source code:
+## Brief explanation of source code:
 
 1) src/Gate/gate.* : Gate class is described which has function to process a gate like adding gate on inuput side.
 
@@ -47,13 +47,13 @@ OR
 
 6) src/TreeMatch/treeMatch.* : This class contains function for recursive tree matching and minimum cost tree covering.
 
--> Log file:
+## Log file:
 
 1) run.log: Log file of output generated for a sample netlist showing the possible mapping and best mapping which provide minimum cost.
 
 -> The output is the valid mapping for every node in netlist. We will also get best mapping and the minimum cost that we get using that mapping.
 
-Understanding the output:
+## Understanding the output:
 
 Gate id: 121, type: NOT
 **********************************
@@ -84,6 +84,7 @@ Leaf node:
 (Gate id: 125, type: INPUT),
 
 (Gate id: 126, type: INPUT)
+**********************************
 
 In above example,we have a netlist with multiple gates and above is possible mapping at the node where NOT gate is present. 
 
@@ -133,7 +134,7 @@ For Gate id: 121, we had NOT gate in input netlist and this gate is mapped to NO
 
 For gate id: 122, we had NAND2 gate in input netlist and this gate is mapped to OR2 gate in technology cell. If we look at the mapping list, we will see the OR2 gate has input pad in its input side, which are mentioned in next two cells.
 
-Reference:
+## Reference:
 
 I took this Coursera course: VLSI: Logic to Layout and learnt about technology mapping. I really liked the course and wanted to implement something which uses knowledge of data structure and algorithm. The minimum cost tree covering is great application of tree data structure, dynamic programming and recursive algorithm.
 
