@@ -1,0 +1,327 @@
+Total tech cell: 8
+Name: NOT
+Printing the gate:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 0
+Input count: 1(1)
+Input gate ID: 1 
+Printing Gate:
+GateType: NOT
+Gate id: 1
+Input count: 1(1)
+Input gate ID: 2 
+Printing Gate:
+GateType: INPUT
+Gate id: 2
+------------------------------------------------------
+Name: NAND2
+Printing the gate:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 0
+Input count: 1(1)
+Input gate ID: 1 
+Printing Gate:
+GateType: NAND2
+Gate id: 1
+Input count: 2(2)
+Input gate ID: 2 3 
+Printing Gate:
+GateType: INPUT
+Gate id: 2
+Printing Gate:
+GateType: INPUT
+Gate id: 3
+------------------------------------------------------
+Name: AND2
+Printing the gate:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 0
+Input count: 1(1)
+Input gate ID: 1 
+Printing Gate:
+GateType: NOT
+Gate id: 1
+Input count: 1(1)
+Input gate ID: 2 
+Printing Gate:
+GateType: NAND2
+Gate id: 2
+Input count: 2(2)
+Input gate ID: 3 4 
+Printing Gate:
+GateType: INPUT
+Gate id: 3
+Printing Gate:
+GateType: INPUT
+Gate id: 4
+------------------------------------------------------
+Name: NOR2
+Printing the gate:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 0
+Input count: 1(1)
+Input gate ID: 1 
+Printing Gate:
+GateType: NOT
+Gate id: 1
+Input count: 1(1)
+Input gate ID: 2 
+Printing Gate:
+GateType: NAND2
+Gate id: 2
+Input count: 2(2)
+Input gate ID: 3 4 
+Printing Gate:
+GateType: NOT
+Gate id: 3
+Input count: 1(1)
+Input gate ID: 5 
+Printing Gate:
+GateType: INPUT
+Gate id: 5
+Printing Gate:
+GateType: NOT
+Gate id: 4
+Input count: 1(1)
+Input gate ID: 6 
+Printing Gate:
+GateType: INPUT
+Gate id: 6
+------------------------------------------------------
+Name: OR2
+Printing the gate:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 0
+Input count: 1(1)
+Input gate ID: 1 
+Printing Gate:
+GateType: NAND2
+Gate id: 1
+Input count: 2(2)
+Input gate ID: 2 3 
+Printing Gate:
+GateType: NOT
+Gate id: 2
+Input count: 1(1)
+Input gate ID: 4 
+Printing Gate:
+GateType: INPUT
+Gate id: 4
+Printing Gate:
+GateType: NOT
+Gate id: 3
+Input count: 1(1)
+Input gate ID: 5 
+Printing Gate:
+GateType: INPUT
+Gate id: 5
+------------------------------------------------------
+Name: AOI21
+Printing the gate:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 0
+Input count: 1(1)
+Input gate ID: 1 
+Printing Gate:
+GateType: NOT
+Gate id: 1
+Input count: 1(1)
+Input gate ID: 2 
+Printing Gate:
+GateType: NAND2
+Gate id: 2
+Input count: 2(2)
+Input gate ID: 3 4 
+Printing Gate:
+GateType: NAND2
+Gate id: 3
+Input count: 2(2)
+Input gate ID: 5 6 
+Printing Gate:
+GateType: INPUT
+Gate id: 5
+Printing Gate:
+GateType: INPUT
+Gate id: 6
+Printing Gate:
+GateType: NOT
+Gate id: 4
+Input count: 1(1)
+Input gate ID: 7 
+Printing Gate:
+GateType: INPUT
+Gate id: 7
+------------------------------------------------------
+Name: AOI22
+Printing the gate:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 0
+Input count: 1(1)
+Input gate ID: 1 
+Printing Gate:
+GateType: NOT
+Gate id: 1
+Input count: 1(1)
+Input gate ID: 2 
+Printing Gate:
+GateType: NAND2
+Gate id: 2
+Input count: 2(2)
+Input gate ID: 3 4 
+Printing Gate:
+GateType: NAND2
+Gate id: 3
+Input count: 2(2)
+Input gate ID: 5 6 
+Printing Gate:
+GateType: INPUT
+Gate id: 5
+Printing Gate:
+GateType: INPUT
+Gate id: 6
+Printing Gate:
+GateType: NAND2
+Gate id: 4
+Input count: 2(2)
+Input gate ID: 7 8 
+Printing Gate:
+GateType: INPUT
+Gate id: 7
+Printing Gate:
+GateType: INPUT
+Gate id: 8
+------------------------------------------------------
+Name: AOI21_ROTATED
+Printing the gate:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 0
+Input count: 1(1)
+Input gate ID: 1 
+Printing Gate:
+GateType: NOT
+Gate id: 1
+Input count: 1(1)
+Input gate ID: 2 
+Printing Gate:
+GateType: NAND2
+Gate id: 2
+Input count: 2(2)
+Input gate ID: 4 3 
+Printing Gate:
+GateType: NOT
+Gate id: 4
+Input count: 1(1)
+Input gate ID: 7 
+Printing Gate:
+GateType: INPUT
+Gate id: 7
+Printing Gate:
+GateType: NAND2
+Gate id: 3
+Input count: 2(2)
+Input gate ID: 5 6 
+Printing Gate:
+GateType: INPUT
+Gate id: 5
+Printing Gate:
+GateType: INPUT
+Gate id: 6
+------------------------------------------------------
+****************************
+Printing Netlist:
+Printing Gate:
+GateType: OUTPUT
+Gate id: 120
+Input count: 1(1)
+Input gate ID: 121 
+Printing Gate:
+GateType: NOT
+Gate id: 121
+Input count: 1(1)
+Input gate ID: 122 
+Printing Gate:
+GateType: NAND2
+Gate id: 122
+Input count: 2(2)
+Input gate ID: 123 124 
+Printing Gate:
+GateType: NOT
+Gate id: 123
+Input count: 1(1)
+Input gate ID: 125 
+Printing Gate:
+GateType: INPUT
+Gate id: 125
+Printing Gate:
+GateType: NOT
+Gate id: 124
+Input count: 1(1)
+Input gate ID: 126 
+Printing Gate:
+GateType: INPUT
+Gate id: 126
+****************************
+**********************************************************
+valid mapping size: 4
+----------------------------------------------------
+Gate id: 121, type: NOT
+**********************************
+Tech map: NOT
+Cost: 2
+Leaf node: 
+Gate id: 122, type: NAND2
+**********************************
+Tech map: AND2
+Cost: 4
+Leaf node: 
+Gate id: 123, type: NOT
+Gate id: 124, type: NOT
+**********************************
+Tech map: NOR2
+Cost: 6
+Leaf node: 
+Gate id: 125, type: INPUT
+Gate id: 126, type: INPUT
+----------------------------------------------------
+Gate id: 122, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 123, type: NOT
+Gate id: 124, type: NOT
+**********************************
+Tech map: OR2
+Cost: 4
+Leaf node: 
+Gate id: 125, type: INPUT
+Gate id: 126, type: INPUT
+----------------------------------------------------
+Gate id: 123, type: NOT
+**********************************
+Tech map: NOT
+Cost: 2
+Leaf node: 
+Gate id: 125, type: INPUT
+----------------------------------------------------
+Gate id: 124, type: NOT
+**********************************
+Tech map: NOT
+Cost: 2
+Leaf node: 
+Gate id: 126, type: INPUT
+**********************************************************
+Minimum cost: 6
+Printing Best mapping
+Gate id: 121, type: NOT :: NOT, cost: 2
+Gate id: 122, type: NAND2 :: OR2, cost: 4
+Gate id: 125 :: INPUT
+Gate id: 126 :: INPUT
