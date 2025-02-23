@@ -37,7 +37,7 @@ OR
    
     vi) AOI21 ( And-or-Invert)
    
-    vii) AOI22 (And-or-Invert)
+    vii) AOI22 (And-or-Invert containing 2 input for each of 2 nand2 cells )
 
     There is another cell AOI21_rotated which is same as AOI21 but it is just in rotated form. This cell is constructed for the tech mapping using technology mapping.
 
