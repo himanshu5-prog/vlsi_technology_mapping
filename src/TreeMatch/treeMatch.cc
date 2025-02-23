@@ -16,19 +16,27 @@ TreeMatch :: init(){
     //Creating cell library
     LibraryCells lib;
     lib.init();
-    lib.print();
+
+    if (m_debugMode){
+        lib.print();
+    }
     m_techCells = lib.getTechCell();
     //----------------------
 
     //Creating Netlist
     Netlist netlist;
     //netlist.createLogicAOI21Rotated();
-    netlist.createSimpleNor();
+    //netlist.createSimpleNor();
 
-    //netlist.createNetlist_2();
+    netlist.createNetlist_2();
     //netlist.createSimpleCircuit();
-    netlist.print();
+
+    if (m_debugMode){
+        netlist.print();
+    }
+
     m_inputNetlist = netlist.getRootNetlist();
+    assert(m_inputNetlist != nullptr);
     //-------------------------------------
 
     //Creating the hash for the netlist
@@ -74,7 +82,7 @@ TreeMatch :: traverseNetlist (TechCell techCellMap,  GatePtr techCell, GatePtr c
         m_validMapping[currentNode].push_back(m);
     }
 
-    if (minCost.find(currentNode) != minCost.end()){
+    if (minCost.find(currentNode) == minCost.end()){
         minCost[currentNode] = -1;
     }
 
@@ -212,17 +220,24 @@ TreeMatch :: calculateMinCost(GatePtr gate){
             if (node->getGateType() == INPUT){
                 continue;
             }
-            currentCost += calculateMinCost(node);   
+            
+            if (minCost[node] != -1){
+                currentCost += minCost[node];
+            } else {
+                currentCost += calculateMinCost(node);
+            }  
         }
 
         if (currentCost < minimumCost){
             minimumCost = currentCost;
-            minCost[gate] = minimumCost;
             bestLibMapping[gate] = info;
         }
 
     }
 
+    minCost[gate] = minimumCost ;
+    std :: cout << "min cost for gate id: " << gate->getGateId() << ", type: " << getStringGateType( gate->getGateType()) << " is : " << minCost[gate] << "\n";
+    
     return minimumCost;
 
 }
