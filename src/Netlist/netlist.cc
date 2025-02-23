@@ -100,13 +100,18 @@ Netlist :: createNetlist_2(){
     // Input of Not  gate is connected to nand gate
     notGate[0]->addInputGate(nandGate[0]);
 
-    nandGate[0]->addInputGate(nandGate[1]);
+    nandGate[0]->addInputGate(nandGate[1]); // gate: 6 getting inpconnected
     nandGate[0]->addInputGate(nandGate[2]);
 
-    nandGate[1]->addInputGate(nandGate[3]);
+    GatePtr notGate_2 = createPrimitiveNotGate(400);
+    
+   // nandGate[1]->addInputGate(nandGate[3]); 
+   nandGate[1]->addInputGate(notGate_2);
+    notGate_2->addInputGate(nandGate[3]);
     nandGate[1]->addInputGate(nandGate[4]);
 
-    nandGate[2]->addInputGate(nandGate[5]);
+    //nandGate[2]->addInputGate(nandGate[5]);
+    
     nandGate[2]->addInputGate(nandGate[6]);
 
     nandGate[3]->addInputGate(nandGate[7]);
@@ -115,8 +120,13 @@ Netlist :: createNetlist_2(){
     nandGate[4]->addInputGate(notGate[2]);
     nandGate[4]->addInputGate(notGate[3]);
 
-    nandGate[5]->addInputGate(nandGate[8]);
+    GatePtr notGate_3 = createPrimitiveNotGate(500);
+    nandGate[2]->addInputGate(notGate_3);
     nandGate[5]->addInputGate(notGate[4]);
+    nandGate[5]->addInputGate(nandGate[8]);
+
+    notGate_3->addInputGate(nandGate[5]);
+
 
     nandGate[6]->addInputGate(nandGate[9]);
     nandGate[6]->addInputGate(nandGate[10]);
