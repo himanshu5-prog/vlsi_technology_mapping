@@ -47,9 +47,10 @@ OR
 4) src/Netlist/netlist.* : This class constructs input netlist. Currently netlist is constructed by adding function and use it for every circuit.
 
     ![Sample Netlist](docs/images/sample_netlist.png)
-5) src/CircuitCreator/circuitCreator.*: These files contain helper function used to create netlist.
+    Above is sample netlist which is made of NOT and NAND2 gates
+6) src/CircuitCreator/circuitCreator.*: These files contain helper function used to create netlist.
 
-6) src/TreeMatch/treeMatch.* : This class contains function for recursive tree matching and minimum cost tree covering.
+7) src/TreeMatch/treeMatch.* : This class contains function for recursive tree matching and minimum cost tree covering.
 
 ## Log file:
 
