@@ -237,6 +237,7 @@ TreeMatch :: printBestMapping(){
 
 void
 TreeMatch :: traverseTree(GatePtr gate){
+    //Function to traverse tree (DFS) to print best mapping. 
     MappedInfo mappedInfo;
     mappedInfo = bestLibMapping[gate];
     std::vector <GatePtr> leafNode = mappedInfo.leafNode;
