@@ -1,8 +1,7 @@
 #include <iostream>
 #include "TreeMatch/treeMatch.hh"
-int main(int argc, char* argv[]){
-    
-    // Handling command line argument
+
+bool handleCommandLineArg (int argc, char * argv[]){
     assert(argc <= 2);
     bool debugMode = false;
     if (argc == 2){
@@ -19,9 +18,14 @@ int main(int argc, char* argv[]){
             return 2;
         }
     }
+
+    return debugMode;
+}
+
+int main(int argc, char* argv[]){    
+    // Handling command line argument-------------------------
+    bool debugMode = handleCommandLineArg(argc, argv);
     //--------------------------------------------------------
-
-
     TreeMatch techMap;
 
     if (debugMode) {
@@ -34,3 +38,12 @@ int main(int argc, char* argv[]){
     return 0;
 
 }
+
+//TODO
+/*
+1) Currently netlist needs to be created by manually adding the function. Add a function which can take netlist in 
+    text form and construct the netlist and also some basic checks.
+
+2) Currently the function which calculates minimum cost uses recursion. The algorithm time complexity can be improved by using 
+   memoization. Tried to add memoization but it was not giving optimized cost.
+*/
