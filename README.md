@@ -42,10 +42,11 @@ OR
     There is another cell AOI21_rotated which is same as AOI21 but it is just in rotated form. This cell is constructed for the tech mapping using technology mapping.
 
     ![Technology Library Cells](docs/images/tech_libcells_1.png)
-    
+
     ![Technology Library Cells](docs/images/tech_libcells_2.png)
 4) src/Netlist/netlist.* : This class constructs input netlist. Currently netlist is constructed by adding function and use it for every circuit.
 
+    ![Sample Netlist](docs/images/sample_netlist.png)
 5) src/CircuitCreator/circuitCreator.*: These files contain helper function used to create netlist.
 
 6) src/TreeMatch/treeMatch.* : This class contains function for recursive tree matching and minimum cost tree covering.
