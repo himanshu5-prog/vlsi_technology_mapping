@@ -58,6 +58,8 @@ OR
 
 -> The output is the valid mapping for every node in netlist. We will also get best mapping and the minimum cost that we get using that mapping.
 
+TODO: Need to generate final mapped netlist. Will push the change once it is done.
+
 ## Understanding the output:
 
 Gate id: 121, type: NOT
