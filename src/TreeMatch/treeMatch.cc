@@ -29,8 +29,9 @@ TreeMatch :: init(){
     Netlist netlist;
     //netlist.createLogicAOI21Rotated();
     //netlist.createSimpleNor();
+    netlist.createSimpleCircuit();
 
-    netlist.createNetlist_2();
+    //netlist.createNetlist_2();
 
     if (m_debugMode){
         netlist.print();
@@ -149,7 +150,7 @@ TreeMatch :: print(){
 
     std :: cout << "**********************************************************\n";
     std :: cout << "Minimum cost: " << m_minimumCost << "\n";
-    std :: cout << "Total mapped cells used (I/O not included): " << m_mappedNetlistGateCount << "\n";
+    //std :: cout << "Total mapped cells used (I/O not included): " << m_mappedNetlistGateCount << "\n";
     std :: cout << "Total gates in logical netlist (I/O not included): " << m_gateHashMap.size() << "\n";
     printMinCostMapping();
 
@@ -301,7 +302,7 @@ TreeMatch :: traverseTree(GatePtr gate){
 void
 TreeMatch :: performMinimumCostTreeCover(){
     m_minimumCost = getMinCost();
-    m_mappedNetlistGateCount = bestLibMapping.size();
+    //m_mappedNetlistGateCount = bestLibMapping.size();
 }
 
 void

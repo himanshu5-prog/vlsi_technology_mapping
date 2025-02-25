@@ -25,26 +25,38 @@ class TreeMatch {
     int m_mappedNetlistGateCount;
 
     public:
+        // constructor and destructor
         TreeMatch();
         ~TreeMatch();
-        void init();
-        void doMatching();
+        //---------------------------
 
+        void init();
+        void run();
+        
+        // Tree matching
+        void doMatching();
         bool matchTree (GatePtr techCell, GatePtr netlist, std :: vector <GatePtr> &leafNode);
         void traverseNetlist(TechCell techCellMap, GatePtr techCell, GatePtr netlist);
-
+        //--------------------------------------------
         //Print functions
         void print();
         void printValidMapping();
         void printMinCostMapping();
         //------------------------------
+        // Minimum cost tree-covering----------
         void performMinimumCostTreeCover();
         int getMinCost();
         int calculateMinCost(GatePtr gate);
+        //-------------------------------------
         //void traverseTree(GatePtr gate);
+        // Helper function------------------------------
         inline void setDebugMode(){m_debugMode = true;}
         bool allInputPadFanIn(GatePtr gate);
-        void run();
+        //---------------------------------------------
+        void createMappedNetlist();
+
+        void helperFunctionTraversal();
+        
         
 
 };
