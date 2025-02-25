@@ -21,6 +21,8 @@ class TreeMatch {
     std :: map <GatePtr, MappedInfo> bestLibMapping;
     GateHashMap m_gateHashMap;
     int m_minimumCost;
+    GatePtr m_mappedNetlist;
+    int m_mappedNetlistGateCount;
 
     public:
         TreeMatch();
@@ -30,16 +32,20 @@ class TreeMatch {
 
         bool matchTree (GatePtr techCell, GatePtr netlist, std :: vector <GatePtr> &leafNode);
         void traverseNetlist(TechCell techCellMap, GatePtr techCell, GatePtr netlist);
+
+        //Print functions
         void print();
-        void printMapping();
-        void printBestMapping();
+        void printValidMapping();
+        void printMinCostMapping();
+        //------------------------------
         void performMinimumCostTreeCover();
         int getMinCost();
         int calculateMinCost(GatePtr gate);
-        void traverseTree(GatePtr gate);
+        //void traverseTree(GatePtr gate);
         inline void setDebugMode(){m_debugMode = true;}
         bool allInputPadFanIn(GatePtr gate);
         void run();
+        
 
 };
 

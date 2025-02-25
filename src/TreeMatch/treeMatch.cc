@@ -3,12 +3,14 @@
 TreeMatch ::
 TreeMatch(){
     m_inputNetlist = nullptr;
+    m_mappedNetlist = nullptr;
     m_debugMode = false;
 }
 
 TreeMatch ::
 ~TreeMatch() {
     delete m_inputNetlist;
+    delete m_mappedNetlist;
 }
 
 void
@@ -29,7 +31,6 @@ TreeMatch :: init(){
     //netlist.createSimpleNor();
 
     netlist.createNetlist_2();
-    //netlist.createSimpleCircuit();
 
     if (m_debugMode){
         netlist.print();
@@ -139,19 +140,25 @@ TreeMatch :: matchTree (GatePtr techCell, GatePtr netlist, std :: vector<GatePtr
 
 void
 TreeMatch :: print(){
+    
+    //std :: cout << "Input Netlist: \n";
+    //printGateHash(m_gateHashMap);
     std :: cout << "**********************************************************\n";
     std::cout << "valid mapping size: " << m_validMapping.size() << "\n";
-    printMapping();
+    printValidMapping();
 
     std :: cout << "**********************************************************\n";
     std :: cout << "Minimum cost: " << m_minimumCost << "\n";
-    printBestMapping();
+    std :: cout << "Total mapped cells used (I/O not included): " << m_mappedNetlistGateCount << "\n";
+    std :: cout << "Total gates in logical netlist (I/O not included): " << m_gateHashMap.size() << "\n";
+    printMinCostMapping();
+
     //assert (m_inputNetlist != nullptr);
     //m_inputNetlist->printGate();
 }
 
 void
-TreeMatch :: printMapping(){
+TreeMatch :: printValidMapping(){
     GatePtr netlistGate;
     std :: vector <MappedInfo> m;
     
@@ -223,7 +230,17 @@ TreeMatch :: calculateMinCost(GatePtr gate){
             
             if (minCost[node] != -1){
                 currentCost += minCost[node];
+                /*
+                std :: cout << "Himanshu :: Using Hash map: gate: " << gate->getGateId() << ", gate type: " 
+                << getStringGateType(gate->getGateType()) << " :: node id: " << node->getGateId() << ", node type: " << 
+                getStringGateType(node->getGateType()) << ", cost of node: " << minCost[node] << ", tech lib cell: " << getStringGateType(info.mappedCellName)<< "\n"; 
+                */
             } else {
+                /*
+                std :: cout << "Himanshu :: calling recursion. gate: " << gate->getGateId() << ", gate type: " <<
+                getStringGateType(gate->getGateType()) << " :: node id: " << node->getGateId() << ", node type: " <<
+                getStringGateType(node->getGateType()) << ", tech lob cell: " << getStringGateType(info.mappedCellName) <<"\n";
+                */
                 currentCost += calculateMinCost(node);
             }  
         }
@@ -242,42 +259,59 @@ TreeMatch :: calculateMinCost(GatePtr gate){
 
 }
 
-void
-TreeMatch :: printBestMapping(){
+void TreeMatch :: printMinCostMapping(){
     std :: cout << "Printing Best mapping\n";
-    GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
+    std :: map <GatePtr, MappedInfo> :: iterator itr;
+    GatePtr currentGate;
+    MappedInfo currentInfo;
+    for (itr = bestLibMapping.begin(); itr != bestLibMapping.end(); ++itr) {
+        currentGate = itr->first;
+        currentInfo = itr->second;
+        std:: cout << "**********************************************************************\n";
+        std :: cout << "Gate id: " << currentGate->getGateId() << ", Gate type: " 
+        << getStringGateType(currentGate->getGateType()) << ", mapped: " << getStringGateType (currentInfo.mappedCellName) << ", cost: " << currentInfo.cost << "\n";
 
-    traverseTree(netListGate);
+        for (auto elem: currentInfo.leafNode){
+            std :: cout << "Leaf node:: Gate id: " << elem->getGateId() << ", Gate type: " << getStringGateType(elem->getGateType()) << "\n";
+        }
+    }
 }
 
+/*
 void
 TreeMatch :: traverseTree(GatePtr gate){
     //Function to traverse tree (DFS) to print best mapping. 
     MappedInfo mappedInfo;
     mappedInfo = bestLibMapping[gate];
     std::vector <GatePtr> leafNode = mappedInfo.leafNode;
-
+    
     std :: cout << "Gate id: " << gate->getGateId() << ", type: " << getStringGateType(gate->getGateType()) << " :: " 
     << getStringGateType(mappedInfo.mappedCellName) << ", cost: " << mappedInfo.cost<<"\n";
 
     for (auto node: leafNode){
         if (node->getGateType() == INPUT){
-            std :: cout << "Gate id: " << node->getGateId() << " :: INPUT\n";
+            std :: cout << "Parent gate id: "<< gate->getGateId() << ", Parent gate type: " << getStringGateType(gate->getGateType()) << "|| Gate id: " << node->getGateId() << " :: INPUT\n";
         } else {
             traverseTree(node);
         }
     }
 
 }
-
+*/
 void
 TreeMatch :: performMinimumCostTreeCover(){
     m_minimumCost = getMinCost();
+    m_mappedNetlistGateCount = bestLibMapping.size();
 }
 
 void
 TreeMatch :: run(){
+    //Perform initialization such as lib cell creation, netlist creation
     init();
+
+    //Perform Tree Matching
     doMatching();
+
+    // Minimum cost tree covering
     performMinimumCostTreeCover();
 }
