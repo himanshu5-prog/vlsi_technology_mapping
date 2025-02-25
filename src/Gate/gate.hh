@@ -41,10 +41,7 @@ Each gate will have 1 output and multiple inputs.
 */
 
 class Gate {
-    typedef std::shared_ptr<Gate> SharedGatePtr;
-    typedef std::weak_ptr<Gate> WeakGatePtr;
-
-    typedef Gate* GatePtr;
+  
 
 
     GateType gateType;
@@ -60,6 +57,10 @@ class Gate {
     std :: vector <int> inputGateId;
 
     public:
+        typedef std::shared_ptr<Gate> SharedGatePtr;
+        typedef std::weak_ptr<Gate> WeakGatePtr;
+
+        typedef Gate* GatePtr;
         Gate();
         Gate(GateType g, int id, int ipCount, std :: vector<GatePtr> inGate);
         ~Gate();
