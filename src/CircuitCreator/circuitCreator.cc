@@ -190,8 +190,14 @@ void printGateHash (GateHashMap gateHash){
     GateHashMap :: iterator itr;
     GatePtr currentGate;
     std :: vector <GatePtr> vectInputGate;
+    int gateCount = 0;
     for (itr = gateHash.begin(); itr != gateHash.end(); ++itr){
         currentGate = itr->first;
+
+        if (currentGate->getGateType() == INPUT || currentGate->getGateType() == OUTPUT){
+            continue;
+        }
+        ++gateCount;
         std :: cout << "---------------------------------------------------------------------------------------------------------------------------\n";
         std :: cout << "current gate id: " << currentGate->getGateId() << ", gate type: " << getStringGateType(currentGate->getGateType()) << "\n";
         std :: cout << "input gate count: " << currentGate->getInputCount() << "\n";
@@ -202,6 +208,9 @@ void printGateHash (GateHashMap gateHash){
         for (GatePtr elem: itr->second){
             std :: cout << "Gate id: " << elem->getGateId() << ", gate type: " << getStringGateType(elem->getGateType()) << "\n";
         }
+        
          std :: cout << "---------------------------------------------------------------------------------------------------------------------------\n";
     }
+
+    std :: cout << "Input netlist gate count: " << gateCount << "\n";
 }
