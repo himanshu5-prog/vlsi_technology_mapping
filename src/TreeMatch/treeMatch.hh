@@ -11,20 +11,48 @@ struct MappedInfo {
     GateType mappedCellName;
     std :: vector <GatePtr> leafNode;
     int cost;
+
+    MappedInfo(){
+        mappedCellName = NA;
+        cost = 0;
+    }
 };
 class TreeMatch {
+
+    // Tech cell
     std :: vector <TechCell> m_techCells;
+
+    // Debug mode
     bool m_debugMode;
+
+    // Input netlist root
     GatePtr m_inputNetlist;
+
+    // Valid mapping of each node in netlist
     std :: map <GatePtr, std :: vector <MappedInfo> > m_validMapping;
+
+    // Minimum cost mapping for each node in netlist
     std :: map <GatePtr, int> minCost;
+
+    // Best library mapping for each node in netlist
     std :: map <GatePtr, MappedInfo> bestLibMapping;
+
+    // Mapping of gate to its input gate for logical netlist
     GateHashMap m_gateHashMap;
+
+    // Overall minimum cost
     int m_minimumCost;
 
+
     // Mapped netlist
+
+    // Root to mapped netlist
     GatePtr m_mappedNetlist;
+
+    // Mapping mapped gate to input mapped gate
     std :: map<GatePtr, std::vector<GatePtr>> m_mappedNetlistMap;
+    
+    // Count of mapped gate
     int m_mappedNetlistGateCount;
 
     // Mapping logical gate to mapped gate
