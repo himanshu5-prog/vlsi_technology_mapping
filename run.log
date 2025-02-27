@@ -1,3 +1,4 @@
+Debug mode is enabled
 Total tech cell: 8
 Name: NOT
 Printing the gate:
@@ -235,93 +236,1179 @@ Printing Gate:
 GateType: INPUT
 Gate id: 6
 ------------------------------------------------------
-****************************
-Printing Netlist:
-Printing Gate:
-GateType: OUTPUT
-Gate id: 120
-Input count: 1(1)
-Input gate ID: 121 
-Printing Gate:
-GateType: NOT
-Gate id: 121
-Input count: 1(1)
-Input gate ID: 122 
-Printing Gate:
-GateType: NAND2
-Gate id: 122
-Input count: 2(2)
-Input gate ID: 123 124 
-Printing Gate:
-GateType: NOT
-Gate id: 123
-Input count: 1(1)
-Input gate ID: 125 
-Printing Gate:
-GateType: INPUT
-Gate id: 125
-Printing Gate:
-GateType: NOT
-Gate id: 124
-Input count: 1(1)
-Input gate ID: 126 
-Printing Gate:
-GateType: INPUT
-Gate id: 126
-****************************
+Gate hash created
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 1, gate type: NOT
+input gate count: 1
+Input gates:
+Gate id: 6, gate type: NAND2
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 2, gate type: NOT
+input gate count: 1
+Input gates:
+Gate id: 17, gate type: INPUT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 3, gate type: NOT
+input gate count: 1
+Input gates:
+Gate id: 20, gate type: INPUT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 4, gate type: NOT
+input gate count: 1
+Input gates:
+Gate id: 21, gate type: INPUT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 5, gate type: NOT
+input gate count: 1
+Input gates:
+Gate id: 24, gate type: INPUT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 6, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 7, gate type: NAND2
+Gate id: 8, gate type: NAND2
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 7, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 400, gate type: NOT
+Gate id: 10, gate type: NAND2
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 8, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 12, gate type: NAND2
+Gate id: 500, gate type: NOT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 9, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 13, gate type: NAND2
+Gate id: 2, gate type: NOT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 10, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 3, gate type: NOT
+Gate id: 4, gate type: NOT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 11, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 5, gate type: NOT
+Gate id: 14, gate type: NAND2
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 12, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 15, gate type: NAND2
+Gate id: 16, gate type: NAND2
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 13, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 18, gate type: INPUT
+Gate id: 19, gate type: INPUT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 14, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 22, gate type: INPUT
+Gate id: 23, gate type: INPUT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 15, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 25, gate type: INPUT
+Gate id: 26, gate type: INPUT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 16, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 27, gate type: INPUT
+Gate id: 28, gate type: INPUT
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 400, gate type: NOT
+input gate count: 1
+Input gates:
+Gate id: 9, gate type: NAND2
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 500, gate type: NOT
+input gate count: 1
+Input gates:
+Gate id: 11, gate type: NAND2
+---------------------------------------------------------------------------------------------------------------------------
+Input netlist gate count: 18
+Finished printing gate hash
+doMatching :: techCell: NOT
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 1, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 1, NOT
+matchTree :: current techCell: 2, INPUT, netlist id: 6, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 6, type: NAND2
+traverseNetlist :: Matching cell id: 1, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 6, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 6, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 6, type: NAND2
+traverseNetlist :: Matching cell id: 6, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 7, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 7, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 400, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 400, NOT
+matchTree :: current techCell: 2, INPUT, netlist id: 9, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 9, type: NAND2
+traverseNetlist :: Matching cell id: 400, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 9, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 9, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 9, type: NAND2
+traverseNetlist :: Matching cell id: 9, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 13, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 13, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 2, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 2, NOT
+matchTree :: current techCell: 2, INPUT, netlist id: 17, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 17, type: INPUT
+traverseNetlist :: Matching cell id: 2, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 10, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 10, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 10, type: NAND2
+traverseNetlist :: Matching cell id: 10, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 3, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 3, NOT
+matchTree :: current techCell: 2, INPUT, netlist id: 20, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 20, type: INPUT
+traverseNetlist :: Matching cell id: 3, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 4, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 4, NOT
+matchTree :: current techCell: 2, INPUT, netlist id: 21, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 21, type: INPUT
+traverseNetlist :: Matching cell id: 4, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 8, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 8, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 8, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 12, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 12, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 12, type: NAND2
+traverseNetlist :: Matching cell id: 12, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 15, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 15, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 15, type: NAND2
+traverseNetlist :: Matching cell id: 15, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 16, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 16, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 16, type: NAND2
+traverseNetlist :: Matching cell id: 16, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 500, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 500, NOT
+matchTree :: current techCell: 2, INPUT, netlist id: 11, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 11, type: NAND2
+traverseNetlist :: Matching cell id: 500, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 11, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 11, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 11, type: NAND2
+traverseNetlist :: Matching cell id: 11, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 5, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 2, INPUT, netlist id: 24, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 24, type: INPUT
+traverseNetlist :: Matching cell id: 5, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 14, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 14, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 14, cell type: NAND2 with tech cell: NOT, matched: 0
+doMatching :: techCell: NAND2
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 1, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 1, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 1, type: NOT
+traverseNetlist :: Matching cell id: 1, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 6, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 6, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 7, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 7, type: NAND2
+matchTree :: current techCell: 3, INPUT, netlist id: 8, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 6, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 7, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 7, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 400, NOT
+matchTree :: input pad found for techCell. netlist gate id: 400, type: NOT
+matchTree :: current techCell: 3, INPUT, netlist id: 10, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 10, type: NAND2
+traverseNetlist :: Matching cell id: 7, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 400, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 400, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 400, type: NOT
+traverseNetlist :: Matching cell id: 400, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 9, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 9, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 13, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 13, type: NAND2
+matchTree :: current techCell: 3, INPUT, netlist id: 2, NOT
+matchTree :: input pad found for techCell. netlist gate id: 2, type: NOT
+traverseNetlist :: Matching cell id: 9, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 13, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 13, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 18, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 18, type: INPUT
+matchTree :: current techCell: 3, INPUT, netlist id: 19, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 19, type: INPUT
+traverseNetlist :: Matching cell id: 13, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 2, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 2, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 2, type: NOT
+traverseNetlist :: Matching cell id: 2, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 10, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 10, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 3, NOT
+matchTree :: input pad found for techCell. netlist gate id: 3, type: NOT
+matchTree :: current techCell: 3, INPUT, netlist id: 4, NOT
+matchTree :: input pad found for techCell. netlist gate id: 4, type: NOT
+traverseNetlist :: Matching cell id: 10, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 3, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 3, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 3, type: NOT
+traverseNetlist :: Matching cell id: 3, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 4, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 4, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 4, type: NOT
+traverseNetlist :: Matching cell id: 4, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 8, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 8, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 12, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 12, type: NAND2
+matchTree :: current techCell: 3, INPUT, netlist id: 500, NOT
+matchTree :: input pad found for techCell. netlist gate id: 500, type: NOT
+traverseNetlist :: Matching cell id: 8, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 12, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 12, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 15, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 15, type: NAND2
+matchTree :: current techCell: 3, INPUT, netlist id: 16, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 16, type: NAND2
+traverseNetlist :: Matching cell id: 12, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 15, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 15, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 25, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 25, type: INPUT
+matchTree :: current techCell: 3, INPUT, netlist id: 26, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 26, type: INPUT
+traverseNetlist :: Matching cell id: 15, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 16, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 16, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 27, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 27, type: INPUT
+matchTree :: current techCell: 3, INPUT, netlist id: 28, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 28, type: INPUT
+traverseNetlist :: Matching cell id: 16, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 500, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 500, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 500, type: NOT
+traverseNetlist :: Matching cell id: 500, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 11, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 11, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 5, NOT
+matchTree :: input pad found for techCell. netlist gate id: 5, type: NOT
+matchTree :: current techCell: 3, INPUT, netlist id: 14, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 11, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 5, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 5, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 5, type: NOT
+traverseNetlist :: Matching cell id: 5, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 14, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 14, NAND2
+matchTree :: current techCell: 2, INPUT, netlist id: 22, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 22, type: INPUT
+matchTree :: current techCell: 3, INPUT, netlist id: 23, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 23, type: INPUT
+traverseNetlist :: Matching cell id: 14, cell type: NAND2 with tech cell: NAND2, matched: 1
+doMatching :: techCell: AND2
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 1, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 1, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 6, NAND2
+matchTree :: current techCell: 3, INPUT, netlist id: 7, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 7, type: NAND2
+matchTree :: current techCell: 4, INPUT, netlist id: 8, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 1, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 6, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 6, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 6, type: NAND2
+traverseNetlist :: Matching cell id: 6, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 7, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 7, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 400, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 400, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 9, NAND2
+matchTree :: current techCell: 3, INPUT, netlist id: 13, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 13, type: NAND2
+matchTree :: current techCell: 4, INPUT, netlist id: 2, NOT
+matchTree :: input pad found for techCell. netlist gate id: 2, type: NOT
+traverseNetlist :: Matching cell id: 400, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 9, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 9, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 9, type: NAND2
+traverseNetlist :: Matching cell id: 9, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 13, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 13, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 2, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 2, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 17, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 17, type: INPUT
+traverseNetlist :: Matching cell id: 2, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 10, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 10, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 10, type: NAND2
+traverseNetlist :: Matching cell id: 10, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 3, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 3, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 20, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 20, type: INPUT
+traverseNetlist :: Matching cell id: 3, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 4, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 4, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 21, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 21, type: INPUT
+traverseNetlist :: Matching cell id: 4, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 8, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 8, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 8, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 12, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 12, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 12, type: NAND2
+traverseNetlist :: Matching cell id: 12, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 15, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 15, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 15, type: NAND2
+traverseNetlist :: Matching cell id: 15, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 16, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 16, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 16, type: NAND2
+traverseNetlist :: Matching cell id: 16, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 500, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 500, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 11, NAND2
+matchTree :: current techCell: 3, INPUT, netlist id: 5, NOT
+matchTree :: input pad found for techCell. netlist gate id: 5, type: NOT
+matchTree :: current techCell: 4, INPUT, netlist id: 14, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 500, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 11, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 11, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 11, type: NAND2
+traverseNetlist :: Matching cell id: 11, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 5, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 24, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 24, type: INPUT
+traverseNetlist :: Matching cell id: 5, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 14, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 14, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 14, cell type: NAND2 with tech cell: NOT, matched: 0
+doMatching :: techCell: NOR2
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 1, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 1, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 6, NAND2
+matchTree :: current techCell: 3, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 3, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 1, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 6, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 6, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 6, type: NAND2
+traverseNetlist :: Matching cell id: 6, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 7, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 7, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 400, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 400, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 9, NAND2
+matchTree :: current techCell: 3, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 3, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 400, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 9, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 9, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 9, type: NAND2
+traverseNetlist :: Matching cell id: 9, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 13, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 13, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 2, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 2, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 17, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 17, type: INPUT
+traverseNetlist :: Matching cell id: 2, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 10, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 10, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 10, type: NAND2
+traverseNetlist :: Matching cell id: 10, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 3, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 3, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 20, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 20, type: INPUT
+traverseNetlist :: Matching cell id: 3, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 4, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 4, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 21, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 21, type: INPUT
+traverseNetlist :: Matching cell id: 4, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 8, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 8, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 8, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 12, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 12, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 12, type: NAND2
+traverseNetlist :: Matching cell id: 12, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 15, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 15, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 15, type: NAND2
+traverseNetlist :: Matching cell id: 15, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 16, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 16, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 16, type: NAND2
+traverseNetlist :: Matching cell id: 16, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 500, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 500, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 11, NAND2
+matchTree :: current techCell: 3, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 5, INPUT, netlist id: 24, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 24, type: INPUT
+matchTree :: current techCell: 4, NOT, netlist id: 14, NAND2
+matchTree :: Cell type is different. tech cell id: 4, tech cell type: NOT, netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 500, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 11, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 11, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 11, type: NAND2
+traverseNetlist :: Matching cell id: 11, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 5, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 24, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 24, type: INPUT
+traverseNetlist :: Matching cell id: 5, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 14, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 14, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 14, cell type: NAND2 with tech cell: NOT, matched: 0
+doMatching :: techCell: OR2
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 1, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 1, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 1, type: NOT
+traverseNetlist :: Matching cell id: 1, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 6, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 6, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 6, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 7, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 7, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 400, NOT
+matchTree :: current techCell: 4, INPUT, netlist id: 9, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 9, type: NAND2
+matchTree :: current techCell: 3, NOT, netlist id: 10, NAND2
+matchTree :: Cell type is different. tech cell id: 3, tech cell type: NOT, netlist gate id: 10, type: NAND2
+traverseNetlist :: Matching cell id: 7, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 400, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 400, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 400, type: NOT
+traverseNetlist :: Matching cell id: 400, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 9, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 9, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 9, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 13, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 13, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 18, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NOT, netlist gate id: 18, type: INPUT
+traverseNetlist :: Matching cell id: 13, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 2, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 2, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 2, type: NOT
+traverseNetlist :: Matching cell id: 2, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 10, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 10, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 3, NOT
+matchTree :: current techCell: 4, INPUT, netlist id: 20, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 20, type: INPUT
+matchTree :: current techCell: 3, NOT, netlist id: 4, NOT
+matchTree :: current techCell: 5, INPUT, netlist id: 21, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 21, type: INPUT
+traverseNetlist :: Matching cell id: 10, cell type: NAND2 with tech cell: NAND2, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 3, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 3, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 3, type: NOT
+traverseNetlist :: Matching cell id: 3, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 4, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 4, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 4, type: NOT
+traverseNetlist :: Matching cell id: 4, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 8, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 8, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 12, NAND2
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NOT, netlist gate id: 12, type: NAND2
+traverseNetlist :: Matching cell id: 8, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 12, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 12, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 15, NAND2
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NOT, netlist gate id: 15, type: NAND2
+traverseNetlist :: Matching cell id: 12, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 15, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 15, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 25, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NOT, netlist gate id: 25, type: INPUT
+traverseNetlist :: Matching cell id: 15, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 16, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 16, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 27, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NOT, netlist gate id: 27, type: INPUT
+traverseNetlist :: Matching cell id: 16, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 500, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 500, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 500, type: NOT
+traverseNetlist :: Matching cell id: 500, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 11, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 11, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 4, INPUT, netlist id: 24, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 24, type: INPUT
+matchTree :: current techCell: 3, NOT, netlist id: 14, NAND2
+matchTree :: Cell type is different. tech cell id: 3, tech cell type: NOT, netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 11, cell type: NAND2 with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 5, gate type: NOT
+matchTree :: current techCell: 1, NAND2, netlist id: 5, NOT
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NAND2, netlist gate id: 5, type: NOT
+traverseNetlist :: Matching cell id: 5, cell type: NOT with tech cell: NAND2, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NAND2, current gate: 14, gate type: NAND2
+matchTree :: current techCell: 1, NAND2, netlist id: 14, NAND2
+matchTree :: current techCell: 2, NOT, netlist id: 22, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NOT, netlist gate id: 22, type: INPUT
+traverseNetlist :: Matching cell id: 14, cell type: NAND2 with tech cell: NAND2, matched: 0
+doMatching :: techCell: AOI21
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 1, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 1, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 6, NAND2
+matchTree :: current techCell: 3, NAND2, netlist id: 7, NAND2
+matchTree :: current techCell: 5, INPUT, netlist id: 400, NOT
+matchTree :: input pad found for techCell. netlist gate id: 400, type: NOT
+matchTree :: current techCell: 6, INPUT, netlist id: 10, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 10, type: NAND2
+matchTree :: current techCell: 4, NOT, netlist id: 8, NAND2
+matchTree :: Cell type is different. tech cell id: 4, tech cell type: NOT, netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 1, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 6, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 6, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 6, type: NAND2
+traverseNetlist :: Matching cell id: 6, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 7, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 7, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 400, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 400, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 9, NAND2
+matchTree :: current techCell: 3, NAND2, netlist id: 13, NAND2
+matchTree :: current techCell: 5, INPUT, netlist id: 18, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 18, type: INPUT
+matchTree :: current techCell: 6, INPUT, netlist id: 19, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 19, type: INPUT
+matchTree :: current techCell: 4, NOT, netlist id: 2, NOT
+matchTree :: current techCell: 7, INPUT, netlist id: 17, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 17, type: INPUT
+traverseNetlist :: Matching cell id: 400, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 9, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 9, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 9, type: NAND2
+traverseNetlist :: Matching cell id: 9, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 13, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 13, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 2, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 2, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 17, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 17, type: INPUT
+traverseNetlist :: Matching cell id: 2, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 10, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 10, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 10, type: NAND2
+traverseNetlist :: Matching cell id: 10, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 3, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 3, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 20, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 20, type: INPUT
+traverseNetlist :: Matching cell id: 3, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 4, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 4, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 21, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 21, type: INPUT
+traverseNetlist :: Matching cell id: 4, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 8, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 8, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 8, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 12, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 12, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 12, type: NAND2
+traverseNetlist :: Matching cell id: 12, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 15, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 15, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 15, type: NAND2
+traverseNetlist :: Matching cell id: 15, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 16, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 16, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 16, type: NAND2
+traverseNetlist :: Matching cell id: 16, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 500, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 500, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 11, NAND2
+matchTree :: current techCell: 3, NAND2, netlist id: 5, NOT
+matchTree :: Cell type is different. tech cell id: 3, tech cell type: NAND2, netlist gate id: 5, type: NOT
+traverseNetlist :: Matching cell id: 500, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 11, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 11, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 11, type: NAND2
+traverseNetlist :: Matching cell id: 11, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 5, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 24, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 24, type: INPUT
+traverseNetlist :: Matching cell id: 5, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 14, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 14, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 14, cell type: NAND2 with tech cell: NOT, matched: 0
+doMatching :: techCell: AOI22
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 1, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 1, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 6, NAND2
+matchTree :: current techCell: 3, NAND2, netlist id: 7, NAND2
+matchTree :: current techCell: 5, INPUT, netlist id: 400, NOT
+matchTree :: input pad found for techCell. netlist gate id: 400, type: NOT
+matchTree :: current techCell: 6, INPUT, netlist id: 10, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 10, type: NAND2
+matchTree :: current techCell: 4, NAND2, netlist id: 8, NAND2
+matchTree :: current techCell: 7, INPUT, netlist id: 12, NAND2
+matchTree :: input pad found for techCell. netlist gate id: 12, type: NAND2
+matchTree :: current techCell: 8, INPUT, netlist id: 500, NOT
+matchTree :: input pad found for techCell. netlist gate id: 500, type: NOT
+traverseNetlist :: Matching cell id: 1, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 6, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 6, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 6, type: NAND2
+traverseNetlist :: Matching cell id: 6, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 7, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 7, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 400, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 400, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 9, NAND2
+matchTree :: current techCell: 3, NAND2, netlist id: 13, NAND2
+matchTree :: current techCell: 5, INPUT, netlist id: 18, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 18, type: INPUT
+matchTree :: current techCell: 6, INPUT, netlist id: 19, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 19, type: INPUT
+matchTree :: current techCell: 4, NAND2, netlist id: 2, NOT
+matchTree :: Cell type is different. tech cell id: 4, tech cell type: NAND2, netlist gate id: 2, type: NOT
+traverseNetlist :: Matching cell id: 400, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 9, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 9, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 9, type: NAND2
+traverseNetlist :: Matching cell id: 9, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 13, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 13, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 2, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 2, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 17, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 17, type: INPUT
+traverseNetlist :: Matching cell id: 2, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 10, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 10, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 10, type: NAND2
+traverseNetlist :: Matching cell id: 10, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 3, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 3, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 20, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 20, type: INPUT
+traverseNetlist :: Matching cell id: 3, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 4, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 4, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 21, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 21, type: INPUT
+traverseNetlist :: Matching cell id: 4, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 8, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 8, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 8, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 12, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 12, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 12, type: NAND2
+traverseNetlist :: Matching cell id: 12, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 15, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 15, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 15, type: NAND2
+traverseNetlist :: Matching cell id: 15, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 16, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 16, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 16, type: NAND2
+traverseNetlist :: Matching cell id: 16, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 500, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 500, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 11, NAND2
+matchTree :: current techCell: 3, NAND2, netlist id: 5, NOT
+matchTree :: Cell type is different. tech cell id: 3, tech cell type: NAND2, netlist gate id: 5, type: NOT
+traverseNetlist :: Matching cell id: 500, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 11, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 11, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 11, type: NAND2
+traverseNetlist :: Matching cell id: 11, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 5, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 24, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 24, type: INPUT
+traverseNetlist :: Matching cell id: 5, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 14, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 14, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 14, cell type: NAND2 with tech cell: NOT, matched: 0
+doMatching :: techCell: AOI21_ROTATED
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 1, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 1, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 6, NAND2
+matchTree :: current techCell: 4, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 4, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 1, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 6, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 6, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 6, type: NAND2
+traverseNetlist :: Matching cell id: 6, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 7, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 7, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 7, type: NAND2
+traverseNetlist :: Matching cell id: 7, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 400, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 400, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 9, NAND2
+matchTree :: current techCell: 4, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 4, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 400, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 9, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 9, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 9, type: NAND2
+traverseNetlist :: Matching cell id: 9, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 13, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 13, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 13, type: NAND2
+traverseNetlist :: Matching cell id: 13, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 2, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 2, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 17, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 17, type: INPUT
+traverseNetlist :: Matching cell id: 2, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 10, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 10, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 10, type: NAND2
+traverseNetlist :: Matching cell id: 10, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 3, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 3, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 20, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 20, type: INPUT
+traverseNetlist :: Matching cell id: 3, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 4, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 4, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 21, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 21, type: INPUT
+traverseNetlist :: Matching cell id: 4, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 8, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 8, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 8, type: NAND2
+traverseNetlist :: Matching cell id: 8, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 12, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 12, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 12, type: NAND2
+traverseNetlist :: Matching cell id: 12, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 15, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 15, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 15, type: NAND2
+traverseNetlist :: Matching cell id: 15, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 16, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 16, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 16, type: NAND2
+traverseNetlist :: Matching cell id: 16, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 500, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 500, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 11, NAND2
+matchTree :: current techCell: 4, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 7, INPUT, netlist id: 24, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 24, type: INPUT
+matchTree :: current techCell: 3, NAND2, netlist id: 14, NAND2
+matchTree :: current techCell: 5, INPUT, netlist id: 22, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 22, type: INPUT
+matchTree :: current techCell: 6, INPUT, netlist id: 23, INPUT
+matchTree :: input pad found for techCell. netlist gate id: 23, type: INPUT
+traverseNetlist :: Matching cell id: 500, cell type: NOT with tech cell: NOT, matched: 1
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 11, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 11, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 11, type: NAND2
+traverseNetlist :: Matching cell id: 11, cell type: NAND2 with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 5, gate type: NOT
+matchTree :: current techCell: 1, NOT, netlist id: 5, NOT
+matchTree :: current techCell: 2, NAND2, netlist id: 24, INPUT
+matchTree :: Cell type is different. tech cell id: 2, tech cell type: NAND2, netlist gate id: 24, type: INPUT
+traverseNetlist :: Matching cell id: 5, cell type: NOT with tech cell: NOT, matched: 0
+traverseNetlist :: Pre-matchTree. tech cell name: NOT, current gate: 14, gate type: NAND2
+matchTree :: current techCell: 1, NOT, netlist id: 14, NAND2
+matchTree :: Cell type is different. tech cell id: 1, tech cell type: NOT, netlist gate id: 14, type: NAND2
+traverseNetlist :: Matching cell id: 14, cell type: NAND2 with tech cell: NOT, matched: 0
+min cost for gate id: 13, type: NAND2 is : 3
+min cost for gate id: 2, type: NOT is : 2
+min cost for gate id: 9, type: NAND2 is : 8
+min cost for gate id: 400, type: NOT is : 7
+min cost for gate id: 3, type: NOT is : 2
+min cost for gate id: 4, type: NOT is : 2
+min cost for gate id: 10, type: NAND2 is : 4
+min cost for gate id: 7, type: NAND2 is : 14
+min cost for gate id: 15, type: NAND2 is : 3
+min cost for gate id: 16, type: NAND2 is : 3
+min cost for gate id: 12, type: NAND2 is : 9
+min cost for gate id: 5, type: NOT is : 2
+min cost for gate id: 14, type: NAND2 is : 3
+min cost for gate id: 11, type: NAND2 is : 8
+min cost for gate id: 500, type: NOT is : 7
+min cost for gate id: 8, type: NAND2 is : 19
+min cost for gate id: 6, type: NAND2 is : 36
+min cost for gate id: 1, type: NOT is : 34
 **********************************************************
-valid mapping size: 4
+valid mapping size: 18
 ----------------------------------------------------
-Gate id: 121, type: NOT
+Gate id: 1, type: NOT
 **********************************
 Tech map: NOT
 Cost: 2
 Leaf node: 
-Gate id: 122, type: NAND2
+Gate id: 6, type: NAND2
 **********************************
 Tech map: AND2
 Cost: 4
 Leaf node: 
-Gate id: 123, type: NOT
-Gate id: 124, type: NOT
+Gate id: 7, type: NAND2
+Gate id: 8, type: NAND2
 **********************************
-Tech map: NOR2
-Cost: 6
+Tech map: AOI22
+Cost: 7
 Leaf node: 
-Gate id: 125, type: INPUT
-Gate id: 126, type: INPUT
+Gate id: 400, type: NOT
+Gate id: 10, type: NAND2
+Gate id: 12, type: NAND2
+Gate id: 500, type: NOT
 ----------------------------------------------------
-Gate id: 122, type: NAND2
+Gate id: 2, type: NOT
+**********************************
+Tech map: NOT
+Cost: 2
+Leaf node: 
+Gate id: 17, type: INPUT
+----------------------------------------------------
+Gate id: 3, type: NOT
+**********************************
+Tech map: NOT
+Cost: 2
+Leaf node: 
+Gate id: 20, type: INPUT
+----------------------------------------------------
+Gate id: 4, type: NOT
+**********************************
+Tech map: NOT
+Cost: 2
+Leaf node: 
+Gate id: 21, type: INPUT
+----------------------------------------------------
+Gate id: 5, type: NOT
+**********************************
+Tech map: NOT
+Cost: 2
+Leaf node: 
+Gate id: 24, type: INPUT
+----------------------------------------------------
+Gate id: 6, type: NAND2
 **********************************
 Tech map: NAND2
 Cost: 3
 Leaf node: 
-Gate id: 123, type: NOT
-Gate id: 124, type: NOT
+Gate id: 7, type: NAND2
+Gate id: 8, type: NAND2
+----------------------------------------------------
+Gate id: 7, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 400, type: NOT
+Gate id: 10, type: NAND2
+----------------------------------------------------
+Gate id: 8, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 12, type: NAND2
+Gate id: 500, type: NOT
+----------------------------------------------------
+Gate id: 9, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 13, type: NAND2
+Gate id: 2, type: NOT
+----------------------------------------------------
+Gate id: 10, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 3, type: NOT
+Gate id: 4, type: NOT
 **********************************
 Tech map: OR2
 Cost: 4
 Leaf node: 
-Gate id: 125, type: INPUT
-Gate id: 126, type: INPUT
+Gate id: 20, type: INPUT
+Gate id: 21, type: INPUT
 ----------------------------------------------------
-Gate id: 123, type: NOT
+Gate id: 11, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 5, type: NOT
+Gate id: 14, type: NAND2
+----------------------------------------------------
+Gate id: 12, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 15, type: NAND2
+Gate id: 16, type: NAND2
+----------------------------------------------------
+Gate id: 13, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 18, type: INPUT
+Gate id: 19, type: INPUT
+----------------------------------------------------
+Gate id: 14, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 22, type: INPUT
+Gate id: 23, type: INPUT
+----------------------------------------------------
+Gate id: 15, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 25, type: INPUT
+Gate id: 26, type: INPUT
+----------------------------------------------------
+Gate id: 16, type: NAND2
+**********************************
+Tech map: NAND2
+Cost: 3
+Leaf node: 
+Gate id: 27, type: INPUT
+Gate id: 28, type: INPUT
+----------------------------------------------------
+Gate id: 400, type: NOT
 **********************************
 Tech map: NOT
 Cost: 2
 Leaf node: 
-Gate id: 125, type: INPUT
+Gate id: 9, type: NAND2
+**********************************
+Tech map: AND2
+Cost: 4
+Leaf node: 
+Gate id: 13, type: NAND2
+Gate id: 2, type: NOT
+**********************************
+Tech map: AOI21
+Cost: 7
+Leaf node: 
+Gate id: 18, type: INPUT
+Gate id: 19, type: INPUT
+Gate id: 17, type: INPUT
 ----------------------------------------------------
-Gate id: 124, type: NOT
+Gate id: 500, type: NOT
 **********************************
 Tech map: NOT
 Cost: 2
 Leaf node: 
-Gate id: 126, type: INPUT
+Gate id: 11, type: NAND2
+**********************************
+Tech map: AND2
+Cost: 4
+Leaf node: 
+Gate id: 5, type: NOT
+Gate id: 14, type: NAND2
+**********************************
+Tech map: AOI21_ROTATED
+Cost: 7
+Leaf node: 
+Gate id: 24, type: INPUT
+Gate id: 22, type: INPUT
+Gate id: 23, type: INPUT
 **********************************************************
-Minimum cost: 6
+Minimum cost: 34
+Total gates in logical netlist (I/O not included): 18
 Printing Best mapping
-Gate id: 121, type: NOT :: NOT, cost: 2
-Gate id: 122, type: NAND2 :: OR2, cost: 4
-Gate id: 125 :: INPUT
-Gate id: 126 :: INPUT
+**********************************************************************
+Gate id: 1, Gate type: NOT, mapped: AOI22, cost: 7
+Leaf node:: Gate id: 400, Gate type: NOT
+Leaf node:: Gate id: 10, Gate type: NAND2
+Leaf node:: Gate id: 12, Gate type: NAND2
+Leaf node:: Gate id: 500, Gate type: NOT
+**********************************************************************
+Gate id: 2, Gate type: NOT, mapped: NOT, cost: 2
+Leaf node:: Gate id: 17, Gate type: INPUT
+**********************************************************************
+Gate id: 3, Gate type: NOT, mapped: NOT, cost: 2
+Leaf node:: Gate id: 20, Gate type: INPUT
+**********************************************************************
+Gate id: 4, Gate type: NOT, mapped: NOT, cost: 2
+Leaf node:: Gate id: 21, Gate type: INPUT
+**********************************************************************
+Gate id: 5, Gate type: NOT, mapped: NOT, cost: 2
+Leaf node:: Gate id: 24, Gate type: INPUT
+**********************************************************************
+Gate id: 6, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 7, Gate type: NAND2
+Leaf node:: Gate id: 8, Gate type: NAND2
+**********************************************************************
+Gate id: 7, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 400, Gate type: NOT
+Leaf node:: Gate id: 10, Gate type: NAND2
+**********************************************************************
+Gate id: 8, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 12, Gate type: NAND2
+Leaf node:: Gate id: 500, Gate type: NOT
+**********************************************************************
+Gate id: 9, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 13, Gate type: NAND2
+Leaf node:: Gate id: 2, Gate type: NOT
+**********************************************************************
+Gate id: 10, Gate type: NAND2, mapped: OR2, cost: 4
+Leaf node:: Gate id: 20, Gate type: INPUT
+Leaf node:: Gate id: 21, Gate type: INPUT
+**********************************************************************
+Gate id: 11, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 5, Gate type: NOT
+Leaf node:: Gate id: 14, Gate type: NAND2
+**********************************************************************
+Gate id: 12, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 15, Gate type: NAND2
+Leaf node:: Gate id: 16, Gate type: NAND2
+**********************************************************************
+Gate id: 13, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 18, Gate type: INPUT
+Leaf node:: Gate id: 19, Gate type: INPUT
+**********************************************************************
+Gate id: 14, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 22, Gate type: INPUT
+Leaf node:: Gate id: 23, Gate type: INPUT
+**********************************************************************
+Gate id: 15, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 25, Gate type: INPUT
+Leaf node:: Gate id: 26, Gate type: INPUT
+**********************************************************************
+Gate id: 16, Gate type: NAND2, mapped: NAND2, cost: 3
+Leaf node:: Gate id: 27, Gate type: INPUT
+Leaf node:: Gate id: 28, Gate type: INPUT
+**********************************************************************
+Gate id: 400, Gate type: NOT, mapped: AOI21, cost: 7
+Leaf node:: Gate id: 18, Gate type: INPUT
+Leaf node:: Gate id: 19, Gate type: INPUT
+Leaf node:: Gate id: 17, Gate type: INPUT
+**********************************************************************
+Gate id: 500, Gate type: NOT, mapped: AOI21_ROTATED, cost: 7
+Leaf node:: Gate id: 24, Gate type: INPUT
+Leaf node:: Gate id: 22, Gate type: INPUT
+Leaf node:: Gate id: 23, Gate type: INPUT
+---------------------------------------------------------------
+Mapped Netlist gate count: 7
+----------------------------------------------------
+Gate id: 1, type: AOI22
+Mapped gate: 
+Gate id: 400, type: AOI21
+Gate id: 10, type: OR2
+Gate id: 12, type: NAND2
+Gate id: 500, type: AOI21_ROTATED
+----------------------------------------------------
+Gate id: 400, type: AOI21
+Mapped gate: 
+Gate id: 18, type: INPUT
+Gate id: 19, type: INPUT
+Gate id: 17, type: INPUT
+----------------------------------------------------
+Gate id: 10, type: OR2
+Mapped gate: 
+Gate id: 20, type: INPUT
+Gate id: 21, type: INPUT
+----------------------------------------------------
+Gate id: 12, type: NAND2
+Mapped gate: 
+Gate id: 15, type: NAND2
+Gate id: 16, type: NAND2
+----------------------------------------------------
+Gate id: 15, type: NAND2
+Mapped gate: 
+Gate id: 25, type: INPUT
+Gate id: 26, type: INPUT
+----------------------------------------------------
+Gate id: 16, type: NAND2
+Mapped gate: 
+Gate id: 27, type: INPUT
+Gate id: 28, type: INPUT
+----------------------------------------------------
+Gate id: 500, type: AOI21_ROTATED
+Mapped gate: 
+Gate id: 24, type: INPUT
+Gate id: 22, type: INPUT
+Gate id: 23, type: INPUT
