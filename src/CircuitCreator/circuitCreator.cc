@@ -176,7 +176,9 @@ void traverseGateHash (GatePtr gate, GateHashMap& record){
     record.insert({gate, gate->getInputGate()});
 
     for (auto elem: gate->getInputGate()){
-        traverseGateHash(elem, record);
+        if (elem->getGateType() != INPUT){
+            traverseGateHash(elem, record);
+        }
     }
 }
 
