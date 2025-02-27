@@ -9,8 +9,26 @@ TreeMatch(){
 
 TreeMatch ::
 ~TreeMatch() {
-    delete m_inputNetlist;
-    delete m_mappedNetlist;
+   for (auto &elem: m_validMapping){
+       elem.second.clear();
+       delete elem.first; // deleting logical gate
+   }
+   
+   for (auto &elem: bestLibMapping){
+       elem.second.leafNode.clear();
+      // delete elem.first;
+   }
+   
+   
+   for (auto &elem: m_mapLogicalToMapped){
+       delete elem.second; // deleting mapped gate
+   }
+
+   for (auto elem: m_mappedNetlistMap){
+       elem.second.clear();
+   }
+
+
 }
 
 void
@@ -20,7 +38,9 @@ TreeMatch :: init(){
     lib.init();
 
     if (m_debugMode){
+        std::cout << "Printing library\n";
         lib.print();
+        std::cout << "Finished printing library\n";
     }
     m_techCells = lib.getTechCell();
     //----------------------
@@ -29,19 +49,9 @@ TreeMatch :: init(){
     Netlist netlist;
     //netlist.createLogicAOI21Rotated();
     //netlist.createSimpleNor();
-    netlist.createSimpleCircuit();
+    //netlist.createSimpleCircuit();
 
-    //netlist.createNetlist_2();
-
-    /*
-    if (m_debugMode){
-        std :: cout << "Netlist created\n";
-        netlist.print();
-        std :: cout << "Finished printing netlist\n";
-   }
-    */
-    
-
+    netlist.createNetlist_2();
     m_inputNetlist = netlist.getRootNetlist();
     assert(m_inputNetlist != nullptr);
     //-------------------------------------
@@ -170,9 +180,6 @@ TreeMatch :: print(){
     std :: cout << "---------------------------------------------------------------\n";
     std :: cout << "Mapped Netlist gate count: " << m_mappedNetlistGateCount << "\n";
     printMappedNetlist();
-
-    //assert (m_inputNetlist != nullptr);
-    //m_inputNetlist->printGate();
 }
 
 void
@@ -298,7 +305,6 @@ void TreeMatch :: printMinCostMapping(){
 void
 TreeMatch :: performMinimumCostTreeCover(){
     m_minimumCost = getMinCost();
-    //m_mappedNetlistGateCount = bestLibMapping.size();
 }
 
 void
@@ -312,9 +318,10 @@ TreeMatch :: run(){
     // Minimum cost tree covering
     performMinimumCostTreeCover();
 
-    //Create mapped netlist
+    //Create hashmap between logical and mapped netlist
     createMappedNetlist();
 
+    //Create hashmap between mapped gate and input mapped gate
     createMappedNetlistMap();
 }
 
