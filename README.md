@@ -62,18 +62,26 @@ TODO: Need to generate final mapped netlist. Will push the change once it is don
 
 ## Understanding the netlist in log file:
 
-Gate hash created for sample netlist
+
 ---------------------------------------------------------------------------------------------------------------------------
 current gate id: 101, gate type: NOT
+
 input gate count: 1
+
 Input gates:
+
 Gate id: 102, gate type: NAND2
+
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
 current gate id: 102, gate type: NAND2
+
 input gate count: 2
+
 Input gates:
+
 Gate id: 103, gate type: INPUT
+
 Gate id: 104, gate type: INPUT
 
 Here we have two logic gates and two input pad. The netlist is printed using map data structure. Each element shows the input gate information.
@@ -84,7 +92,9 @@ The first element shows NOT gate and has NAND2 (id: 102) connected. If we go to 
 ## Understanding the output:
 
 Mapped Netlist gate count: 1
-----------------------------------------------------
+
+---------------------------------------------------
+
 Gate id: 101, type: AND2
 
 Mapped gate: 
