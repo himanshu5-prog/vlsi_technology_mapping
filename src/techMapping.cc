@@ -43,5 +43,4 @@ int main(int argc, char* argv[]){
 /*
 1) Currently netlist needs to be created by manually adding the function. Add a function which can take netlist in 
     text form and construct the netlist and also some basic checks.
-2) Create Mapped netlist
 */

@@ -60,86 +60,42 @@ OR
 
 TODO: Need to generate final mapped netlist. Will push the change once it is done.
 
+## Understanding the netlist in log file:
+
+Gate hash created for sample netlist
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 101, gate type: NOT
+input gate count: 1
+Input gates:
+Gate id: 102, gate type: NAND2
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+current gate id: 102, gate type: NAND2
+input gate count: 2
+Input gates:
+Gate id: 103, gate type: INPUT
+Gate id: 104, gate type: INPUT
+
+Here we have two logic gates and two input pad. The netlist is printed using map data structure. Each element shows the input gate information.
+
+The first element shows NOT gate and has NAND2 (id: 102) connected. If we go to the next element in hash, we will come to NAND2 (id: 102). This gate is connected to two input pad.
+
+
 ## Understanding the output:
 
-Gate id: 121, type: NOT
-**********************************
-Tech map: NOT
+Mapped Netlist gate count: 1
+----------------------------------------------------
+Gate id: 101, type: AND2
 
-Cost: 2
+Mapped gate: 
 
-Leaf node:
+Gate id: 103, type: INPUT
 
-(Gate id: 122, type: NAND2)
-**********************************
-Tech map: AND2
+Gate id: 104, type: INPUT
 
-Cost: 4
+**********************************************
 
-Leaf node:
-
-(Gate id: 123, type: NOT),
-
-(Gate id: 124, type: NOT)
-**********************************
-Tech map: NOR2
-
-Cost: 6
-
-Leaf node: 
-
-(Gate id: 125, type: INPUT),
-
-(Gate id: 126, type: INPUT)
-**********************************
-
-In above example,we have a netlist with multiple gates and above is possible mapping at the node where NOT gate is present. 
-
-Let's look at first possible mapping:
-
-Tech map: NOT
-
-Cost: 2
-
-Leaf node:
-
-Gate id: 122, type: NAND2
-
-We can use NOT cell from our library cell list. If we use it, the cost will be 2 and the leaf node has Nand2 gate which in-turn needs to be mapped.
-
-Now let's look at another possible mapping.
-
-Tech map: AND2
-
-Cost: 4
-
-Leaf node: 
-
-Gate id: 123, type: NOT
-
-Gate id: 124, type: NOT
-
-We can use AND2 gate and the cost will be 4. The leaf node will be Not gates connected to input of mapped AND2 gate.
-
-Now let's look at the best mapping which provided us minimum cost:
-
-Minimum cost: 6
-
-Printing Best mapping
-
-Gate id: 121, type: NOT :: NOT, cost: 2
-
-Gate id: 122, type: NAND2 :: OR2, cost: 4
-
-Gate id: 125 :: INPUT
-
-Gate id: 126 :: INPUT
-
-Above, the minimum cost is 6 and we have mapped cell corresponding to each of the node.
-
-For Gate id: 121, we had NOT gate in input netlist and this gate is mapped to NOT gate from the technology cells.
-
-For gate id: 122, we had NAND2 gate in input netlist and this gate is mapped to OR2 gate in technology cell. If we look at the mapping list, we will see the OR2 gate has input pad in its input side, which are mentioned in next two cells.
+Here, the logical gate discussed before can be mapped to technology mapped AND2 cell which is functionally equivalent to the logical netlist.
 
 ## Reference:
 

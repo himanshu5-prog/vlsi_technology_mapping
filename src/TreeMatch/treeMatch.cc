@@ -29,9 +29,9 @@ TreeMatch :: init(){
     Netlist netlist;
     //netlist.createLogicAOI21Rotated();
     //netlist.createSimpleNor();
-    //netlist.createSimpleCircuit();
+    netlist.createSimpleCircuit();
 
-    netlist.createNetlist_2();
+    //netlist.createNetlist_2();
 
     /*
     if (m_debugMode){
