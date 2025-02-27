@@ -6,7 +6,7 @@
 #include "../Netlist/netlist.hh"
 #include <map>
 #include <algorithm>
-
+#include <queue>
 struct MappedInfo {
     GateType mappedCellName;
     std :: vector <GatePtr> leafNode;
@@ -21,8 +21,14 @@ class TreeMatch {
     std :: map <GatePtr, MappedInfo> bestLibMapping;
     GateHashMap m_gateHashMap;
     int m_minimumCost;
+
+    // Mapped netlist
     GatePtr m_mappedNetlist;
+    std :: map<GatePtr, std::vector<GatePtr>> m_mappedNetlistMap;
     int m_mappedNetlistGateCount;
+
+    // Mapping logical gate to mapped gate
+    std :: map <GatePtr, GatePtr> m_mapLogicalToMapped; 
 
     public:
         // constructor and destructor
@@ -53,9 +59,16 @@ class TreeMatch {
         inline void setDebugMode(){m_debugMode = true;}
         bool allInputPadFanIn(GatePtr gate);
         //---------------------------------------------
+        // Creating mapped netlist
         void createMappedNetlist();
+        void helperFunctionTraversal( GatePtr gate, int& count);
 
-        void helperFunctionTraversal();
+        //Printing mapped netlist
+        void printMappedNetlist();
+        void traverseTreePrint(GatePtr gate);
+        void createMappedNetlistMap();
+        void helperFunctionCreateNetlistMap(GatePtr gate);
+        //---------------------------------------------
         
         
 
