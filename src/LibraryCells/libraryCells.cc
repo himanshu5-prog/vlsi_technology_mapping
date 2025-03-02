@@ -332,7 +332,7 @@ LibraryCells :: init() {
 }
 
 void
-LibraryCells :: print(){
+LibraryCells :: print() const {
     std :: cout << "Total tech cell: " << m_cellCount << "\n";
     for (auto &elem: m_techCellVect){
         std :: cout << "Name: " << getStringGateType(elem.name) << "\n";
@@ -344,6 +344,6 @@ LibraryCells :: print(){
 }
 
 std :: vector <TechCell>
-LibraryCells :: getTechCell(){
+LibraryCells :: getTechCell() const{
     return m_techCellVect;
 }

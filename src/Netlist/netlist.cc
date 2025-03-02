@@ -5,7 +5,7 @@ Netlist::Netlist(){
 }
 
 GatePtr
-Netlist :: getRootNetlist(){
+Netlist :: getRootNetlist() const{
     return m_rootNetlist;
 }
 
@@ -211,7 +211,7 @@ void Netlist :: createSimpleNor(){
 }
 
 void
-Netlist::print(){
+Netlist::print() const{
     std:: cout << "****************************\n";
     std::cout << "Printing Netlist:\n";
     m_rootNetlist->printGate();

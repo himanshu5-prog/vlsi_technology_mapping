@@ -61,13 +61,13 @@ class Gate {
         // Get methods-----------------------
 
         // Gate type
-        GateType getGateType();
+        GateType getGateType() const;
 
         // Gate ID
-        int getGateId();
+        int getGateId() const;
 
         // Input side 
-        int getInputCount();
+        int getInputCount() const;
         std :: vector <GatePtr> getInputGate();
         bool isMapped();
         //-------------------------------------    
@@ -84,7 +84,7 @@ class Gate {
             m_inputGateId.push_back(g->getGateId());
         }
 
-        void printGate();
+        void printGate() const;
 };
 
 #endif

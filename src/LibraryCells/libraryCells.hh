@@ -41,8 +41,8 @@ class LibraryCells {
     GatePtr createAOI21_rotated();
     GatePtr createAOI22();
 
-    void print();
-    std :: vector <TechCell> getTechCell();
+    void print() const;
+    std :: vector <TechCell> getTechCell() const;
 
 };
 #endif

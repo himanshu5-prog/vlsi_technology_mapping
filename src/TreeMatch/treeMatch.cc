@@ -176,7 +176,7 @@ TreeMatch :: matchTree (GatePtr techCell, GatePtr netlist, std :: vector<GatePtr
 }
 
 void
-TreeMatch :: print(){
+TreeMatch :: print() const{
     
     //std :: cout << "Input Netlist: \n";
     //printGateHash(m_gateHashMap);
@@ -198,7 +198,7 @@ TreeMatch :: print(){
 }
 
 void
-TreeMatch :: printValidMapping(){
+TreeMatch :: printValidMapping() const{
     GatePtr netlistGate;
     std :: vector <MappedInfo> m;
     
@@ -298,9 +298,9 @@ TreeMatch :: calculateMinCost(GatePtr gate){
 
 }
 
-void TreeMatch :: printMinCostMapping(){
+void TreeMatch :: printMinCostMapping() const{
     std :: cout << "Printing Best mapping\n";
-    std :: map <GatePtr, MappedInfo> :: iterator itr;
+    std :: map <GatePtr, MappedInfo> :: const_iterator itr;
     GatePtr currentGate;
     MappedInfo currentInfo;
     for (itr = m_bestLibMapping.begin(); itr != m_bestLibMapping.end(); ++itr) {
@@ -406,7 +406,7 @@ TreeMatch :: helperFunctionCreateNetlistMap(GatePtr gate){
     
 }
 void
-TreeMatch :: printMappedNetlist(){
+TreeMatch :: printMappedNetlist() const{
     //GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
     GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
 

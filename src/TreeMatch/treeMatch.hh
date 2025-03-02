@@ -73,16 +73,15 @@ class TreeMatch {
         void traverseNetlist(TechCell techCellMap, GatePtr techCell, GatePtr netlist);
         //--------------------------------------------
         //Print functions
-        void print();
-        void printValidMapping();
-        void printMinCostMapping();
+        void print() const;
+        void printValidMapping() const;
+        void printMinCostMapping() const;
         //------------------------------
         // Minimum cost tree-covering----------
         void performMinimumCostTreeCover();
         int getMinCost();
         int calculateMinCost(GatePtr gate);
         //-------------------------------------
-        //void traverseTree(GatePtr gate);
         // Helper function------------------------------
         inline void setDebugMode(){m_debugMode = true;}
         bool allInputPadFanIn(GatePtr gate);
@@ -92,8 +91,7 @@ class TreeMatch {
         void helperFunctionTraversal( GatePtr gate, int& count);
 
         //Printing mapped netlist
-        void printMappedNetlist();
-        void traverseTreePrint(GatePtr gate);
+        void printMappedNetlist() const;
         void createMappedNetlistMap();
         void helperFunctionCreateNetlistMap(GatePtr gate);
         //---------------------------------------------

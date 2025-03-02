@@ -23,10 +23,10 @@ class Netlist {
     void createSimpleNor();
 
     //Print method
-    void print();
+    void print() const;
 
     // Get method
-    GatePtr getRootNetlist();
+    GatePtr getRootNetlist() const;
 };
 
 #endif

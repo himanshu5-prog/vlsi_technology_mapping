@@ -62,7 +62,7 @@ Gate(GateType g, int id, int ipCount, std :: vector <GatePtr> inGate){
 Gate :: ~Gate(){
 }
 
-void Gate :: printGate(){
+void Gate :: printGate() const{
     std :: cout << "Printing Gate:\n";
     std :: cout << "GateType: " << getStringGateType(m_gateType) << "\n";
     std :: cout << "Gate id: " << m_gateId << "\n";
@@ -86,16 +86,16 @@ void Gate :: printGate(){
 }
 
 // Get method
-GateType Gate:: getGateType(){
+GateType Gate:: getGateType() const {
     return m_gateType;
 }
 
-int Gate :: getGateId(){
+int Gate :: getGateId() const {
     return m_gateId;
 }
 
 
-int Gate :: getInputCount(){
+int Gate :: getInputCount() const{
     return m_inputCount;
 }
 
