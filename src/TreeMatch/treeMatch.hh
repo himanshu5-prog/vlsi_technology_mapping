@@ -32,10 +32,10 @@ class TreeMatch {
     std :: map <GatePtr, std :: vector <MappedInfo> > m_validMapping;
 
     // Minimum cost mapping for each node in netlist
-    std :: map <GatePtr, int> minCost;
+    std :: map <GatePtr, int> m_minCostVect;
 
     // Best library mapping for each node in netlist
-    std :: map <GatePtr, MappedInfo> bestLibMapping;
+    std :: map <GatePtr, MappedInfo> m_bestLibMapping;
 
     // Mapping of gate to its input gate for logical netlist
     GateHashMap m_gateHashMap;

@@ -43,25 +43,22 @@ Each gate will have 1 output and multiple inputs.
 class Gate {
   typedef Gate* GatePtr;
 
-
-    GateType gateType;
-    int gateId;
+    GateType m_gateType;
+    int m_gateId;
     bool m_mapped;
-    
-    // Output side
-    //GatePtr outputGate;
-    //int outputGateId;
 
-    int inputCount;
-    std :: vector <GatePtr> inputGate;
-    std :: vector <int> inputGateId;
+    int m_inputCount;
+    std :: vector <GatePtr> m_inputGate;
+    std :: vector <int> m_inputGateId;
 
     public:
-      
+
+        //Constructor and destructor
         Gate();
         Gate(GateType g, int id, int ipCount, std :: vector<GatePtr> inGate);
         ~Gate();
-        // Get methods
+
+        // Get methods-----------------------
 
         // Gate type
         GateType getGateType();
@@ -72,22 +69,19 @@ class Gate {
         // Input side 
         int getInputCount();
         std :: vector <GatePtr> getInputGate();
-        std :: vector <int> getinputGateId;
-
-        // Set methods
+        bool isMapped();
+        //-------------------------------------    
+        // Set methods--------------------------------
         void setGateType(GateType g);
         void setGateId (int id);
 
         void setInputCount(int c);
         void setInputGate( std :: vector < GatePtr > v);
-
+        void setMapped();
+        //--------------------------------------------
         void addInputGate(GatePtr g){
-            inputGate.push_back(g);
-            inputGateId.push_back(g->getGateId());
-        }
-        
-        void addInputGateId(int i){
-            inputGateId.push_back(i);
+            m_inputGate.push_back(g);
+            m_inputGateId.push_back(g->getGateId());
         }
 
         void printGate();

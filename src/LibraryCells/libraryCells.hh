@@ -24,8 +24,8 @@ struct TechCell {
 
 
 class LibraryCells {
-    int cellCount;
-    std :: vector <TechCell> techCell; 
+    int m_cellCount;
+    std :: vector <TechCell> m_techCellVect; 
     public:
 
     LibraryCells();

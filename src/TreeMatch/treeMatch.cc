@@ -14,7 +14,7 @@ TreeMatch ::
        delete elem.first; // deleting logical gate
    }
    
-   for (auto &elem: bestLibMapping){
+   for (auto &elem: m_bestLibMapping){
        elem.second.leafNode.clear();
       // delete elem.first;
    }
@@ -54,6 +54,12 @@ TreeMatch :: init(){
     netlist.createNetlist_2();
     m_inputNetlist = netlist.getRootNetlist();
     assert(m_inputNetlist != nullptr);
+
+    if (checkGateWrapper(m_inputNetlist)){
+        std :: cout << "Netlist is valid\n";
+    } else {
+        std :: cerr << "ERROR: Netlist is invalid\n";
+    }
     //-------------------------------------
 
     //Creating the hash for the netlist
@@ -107,8 +113,8 @@ TreeMatch :: traverseNetlist (TechCell techCellMap,  GatePtr techCell, GatePtr c
         m_validMapping[currentNode].push_back(m);
     }
 
-    if (minCost.find(currentNode) == minCost.end()){
-        minCost[currentNode] = -1;
+    if (m_minCostVect.find(currentNode) == m_minCostVect.end()){
+        m_minCostVect[currentNode] = -1;
     }
 
     for(auto elem: currentNode->getInputGate()){
@@ -261,8 +267,8 @@ TreeMatch :: calculateMinCost(GatePtr gate){
                 continue;
             }
             
-            if (minCost[node] != -1){
-                currentCost += minCost[node];
+            if (m_minCostVect[node] != -1){
+                currentCost += m_minCostVect[node];
                 /*
                 std :: cout << "Himanshu :: Using Hash map: gate: " << gate->getGateId() << ", gate type: " 
                 << getStringGateType(gate->getGateType()) << " :: node id: " << node->getGateId() << ", node type: " << 
@@ -280,13 +286,13 @@ TreeMatch :: calculateMinCost(GatePtr gate){
 
         if (currentCost < minimumCost){
             minimumCost = currentCost;
-            bestLibMapping[gate] = info;
+            m_bestLibMapping[gate] = info;
         }
 
     }
 
-    minCost[gate] = minimumCost ;
-    std :: cout << "calculateMinCost :: min cost for gate id: " << gate->getGateId() << ", type: " << getStringGateType( gate->getGateType()) << " is : " << minCost[gate] << "\n";
+    m_minCostVect[gate] = minimumCost ;
+    std :: cout << "calculateMinCost :: min cost for gate id: " << gate->getGateId() << ", type: " << getStringGateType( gate->getGateType()) << " is : " << m_minCostVect[gate] << "\n";
     
     return minimumCost;
 
@@ -297,7 +303,7 @@ void TreeMatch :: printMinCostMapping(){
     std :: map <GatePtr, MappedInfo> :: iterator itr;
     GatePtr currentGate;
     MappedInfo currentInfo;
-    for (itr = bestLibMapping.begin(); itr != bestLibMapping.end(); ++itr) {
+    for (itr = m_bestLibMapping.begin(); itr != m_bestLibMapping.end(); ++itr) {
         currentGate = itr->first;
         currentInfo = itr->second;
         std:: cout << "**********************************************************************\n";
@@ -357,7 +363,7 @@ TreeMatch :: helperFunctionTraversal( GatePtr gate, int& gateCount){
         return;
     }
     //GateType mappedGatetype;
-    MappedInfo info = bestLibMapping[gate];
+    MappedInfo info = m_bestLibMapping[gate];
 
     GateType gateType;
     gateType = info.mappedCellName;
@@ -365,6 +371,7 @@ TreeMatch :: helperFunctionTraversal( GatePtr gate, int& gateCount){
     GatePtr mappedGate = new Gate();
     mappedGate->setGateId(gate->getGateId());
     mappedGate->setGateType(gateType);
+    mappedGate->setMapped();
     m_mapLogicalToMapped[gate] = mappedGate;
     ++gateCount;
         
@@ -389,7 +396,7 @@ TreeMatch :: helperFunctionCreateNetlistMap(GatePtr gate){
     }
 
     GatePtr map = m_mapLogicalToMapped[gate];
-    MappedInfo info = bestLibMapping[gate];
+    MappedInfo info = m_bestLibMapping[gate];
     
 
     for (auto elem: info.leafNode){
@@ -407,6 +414,7 @@ TreeMatch :: printMappedNetlist(){
 
     for (auto itr = m_mappedNetlistMap.begin(); itr != m_mappedNetlistMap.end(); ++itr){
         GatePtr gate = itr->first;
+        assert (gate->isMapped());
         std :: cout << "----------------------------------------------------\n";
         std :: cout << "Gate id: " << gate->getGateId() << ", type: " << getStringGateType(gate->getGateType()) << "\n";
         std :: cout << "Mapped gate: \n";

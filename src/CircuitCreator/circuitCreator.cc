@@ -120,7 +120,7 @@ bool checkGate (GatePtr gate){
 bool checkGateWrapper( GatePtr gate){
 
     if (!checkGate(gate)){
-        std :: cerr << "Check failed for gate id: " << gate->getGateId() << "\n";
+        std :: cerr << "Check failed for gate id: " << gate->getGateId() << ", gate type: " << getStringGateType(gate->getGateType())<< "\n";
         return false;
     }
 

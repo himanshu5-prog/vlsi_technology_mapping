@@ -1,7 +1,7 @@
 #include "libraryCells.hh"
 
 LibraryCells :: LibraryCells (){
-    cellCount = 0;
+    m_cellCount = 0;
 }
 
 LibraryCells :: ~LibraryCells(){
@@ -209,51 +209,51 @@ LibraryCells :: init() {
    t.root = createNotGate();
    t.cost = NOT_GATE_COST;
    t.name = NOT;
-   techCell.push_back(t);
+   m_techCellVect.push_back(t);
 
    t.root = createNandGate();
    t.cost = NAND_GATE_COST;
    t.name = NAND2;
-   techCell.push_back(t);
+   m_techCellVect.push_back(t);
 
    t.root = createAndGate();
    t.cost= AND_GATE_COST;
    t.name = AND2;
-   techCell.push_back(t);
+   m_techCellVect.push_back(t);
 
    t.root = createNorGate();
    t.cost = NOR_GATE_COST;
    t.name = NOR2;
-   techCell.push_back(t);
+   m_techCellVect.push_back(t);
 
    t.root = createOrGate();
    t.cost = OR_GATE_COST;
    t.name = OR2;
-   techCell.push_back(t);
+   m_techCellVect.push_back(t);
 
    t.root = createAOI21();
    t.cost = AOI21_GATE_COST;
    t.name = AOI21;
-   techCell.push_back(t);
+   m_techCellVect.push_back(t);
 
    t.root = createAOI22();
    t.cost = AOI22_GATE_COST;
    t.name = AOI22;
-   techCell.push_back(t);
+   m_techCellVect.push_back(t);
 
    t.root = createAOI21_rotated();
    t.cost = AOI21_GATE_COST;
    t.name = AOI21_ROTATED;
-   techCell.push_back(t);
+   m_techCellVect.push_back(t);
 
-   cellCount = techCell.size();
+   m_cellCount = m_techCellVect.size();
 
 }
 
 void
 LibraryCells :: print(){
-    std :: cout << "Total tech cell: " << cellCount << "\n";
-    for (auto &elem: techCell){
+    std :: cout << "Total tech cell: " << m_cellCount << "\n";
+    for (auto &elem: m_techCellVect){
         std :: cout << "Name: " << getStringGateType(elem.name) << "\n";
         std :: cout << "Printing the gate:\n";
         elem.root->printGate();
@@ -264,5 +264,5 @@ LibraryCells :: print(){
 
 std :: vector <TechCell>
 LibraryCells :: getTechCell(){
-    return techCell;
+    return m_techCellVect;
 }

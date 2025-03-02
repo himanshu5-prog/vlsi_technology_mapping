@@ -44,18 +44,18 @@ std :: string getStringGateType(GateType g){
 
 Gate ::
 Gate (){
-    gateType = NA;
-    gateId = -1;
-    inputCount = 0;
+    m_gateId = NA;
+    m_gateId = -1;
+    m_inputCount = 0;
     m_mapped = false;
 }
 
 Gate :: 
 Gate(GateType g, int id, int ipCount, std :: vector <GatePtr> inGate){
-    gateType = g;
-    gateId = id;
-    inputCount = ipCount;
-    inputGate = inGate;
+    m_gateType = g;
+    m_gateId = id;
+    m_inputCount = ipCount;
+    m_inputGate = inGate;
 
 }
 
@@ -64,20 +64,20 @@ Gate :: ~Gate(){
 
 void Gate :: printGate(){
     std :: cout << "Printing Gate:\n";
-    std :: cout << "GateType: " << getStringGateType(gateType) << "\n";
-    std :: cout << "Gate id: " << gateId << "\n";
+    std :: cout << "GateType: " << getStringGateType(m_gateType) << "\n";
+    std :: cout << "Gate id: " << m_gateId << "\n";
     
 
-    if (inputCount > 0){
-        std :: cout << "Input count: " << inputCount << "(" << inputGate.size() << ")"<< "\n";
+    if (m_inputCount > 0){
+        std :: cout << "Input count: " << m_inputCount << "(" << m_inputGate.size() << ")"<< "\n";
         std :: cout << "Input gate ID: ";
-        for (int elem: inputGateId){
+        for (int elem: m_inputGateId){
             std :: cout << elem << " ";
         }
         std :: cout << "\n";
     }
     
-    for (auto elem: inputGate){
+    for (auto elem: m_inputGate){
 
        elem->printGate();
         
@@ -87,37 +87,45 @@ void Gate :: printGate(){
 
 // Get method
 GateType Gate:: getGateType(){
-    return gateType;
+    return m_gateType;
 }
 
 int Gate :: getGateId(){
-    return gateId;
+    return m_gateId;
 }
 
 
 int Gate :: getInputCount(){
-    return inputCount;
+    return m_inputCount;
 }
 
 std :: vector <GatePtr> 
 Gate :: getInputGate(){
-    return inputGate;
+    return m_inputGate;
 }
 
 // set method
 void Gate :: setGateType(GateType g){
-    gateType = g;
+    m_gateType = g;
 }
 
 void Gate :: setGateId (int id){
-    gateId = id;
+    m_gateId = id;
 }
 
 
 void Gate :: setInputCount (int c){
-    inputCount = c;
+    m_inputCount = c;
 }
 
 void Gate :: setInputGate(std :: vector < GatePtr> v) {
-    inputGate = v;
+    m_inputGate = v;
+}
+
+void Gate :: setMapped(){
+    m_mapped = true;
+}
+
+bool Gate :: isMapped(){
+    return m_mapped;
 }
