@@ -137,6 +137,7 @@ TreeMatch :: matchTree (GatePtr techCell, GatePtr netlist, std :: vector<GatePtr
         return true;
     }
     
+    //Gate mismatch in tech cell and netlist. Return false
     if (techCell->getGateType() != netlist->getGateType()){
 
         if (m_debugMode){
@@ -146,15 +147,21 @@ TreeMatch :: matchTree (GatePtr techCell, GatePtr netlist, std :: vector<GatePtr
 
         return false;
     }
-
+    //--------------------------------------------
+    
+    //Gate type is same.
     assert (techCell->getGateType() == netlist->getGateType());
     assert (techCell->getInputCount() == netlist->getInputCount());
 
     std :: vector <GatePtr> t = techCell->getInputGate();
     std :: vector <GatePtr> n = netlist->getInputGate();
+
+    
     if (techCell->getInputCount() == 1){
+        // techCell and netlist are both Not gate
         return matchTree(t[0], n[0], leafNode);
     } else if (techCell->getInputCount() == 2){
+        // techCell and netlist are Nand gates
         return matchTree(t[0],n[0], leafNode) && matchTree(t[1],n[1], leafNode);
     }
 
@@ -175,10 +182,12 @@ TreeMatch :: print(){
     std :: cout << "Minimum cost: " << m_minimumCost << "\n";
     //std :: cout << "Total mapped cells used (I/O not included): " << m_mappedNetlistGateCount << "\n";
     std :: cout << "Total gates in logical netlist (I/O not included): " << m_gateHashMap.size() - 1 << "\n";
+    std :: cout << "Printing minimum cost mapping\n";
     printMinCostMapping();
 
     std :: cout << "---------------------------------------------------------------\n";
     std :: cout << "Mapped Netlist gate count: " << m_mappedNetlistGateCount << "\n";
+    std :: cout << "Printing mapped netlist\n";
     printMappedNetlist();
 }
 
@@ -244,7 +253,6 @@ TreeMatch :: calculateMinCost(GatePtr gate){
     std :: vector<GatePtr> leafNodeVect;
     
     for (auto info : mappedInfo){
-        currentCost = 0;
         leafNodeVect = info.leafNode;
         currentCost = info.cost;
 
@@ -278,7 +286,7 @@ TreeMatch :: calculateMinCost(GatePtr gate){
     }
 
     minCost[gate] = minimumCost ;
-    std :: cout << "min cost for gate id: " << gate->getGateId() << ", type: " << getStringGateType( gate->getGateType()) << " is : " << minCost[gate] << "\n";
+    std :: cout << "calculateMinCost :: min cost for gate id: " << gate->getGateId() << ", type: " << getStringGateType( gate->getGateType()) << " is : " << minCost[gate] << "\n";
     
     return minimumCost;
 
