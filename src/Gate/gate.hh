@@ -69,12 +69,6 @@ class Gate {
         // Gate ID
         int getGateId();
 
-        // Fanout gate pointer
-        //GatePtr getOutputGate();
-        //int getOutputGateId(){
-        //    return outputGateId;
-        //}
-
         // Input side 
         int getInputCount();
         std :: vector <GatePtr> getInputGate();
@@ -86,23 +80,17 @@ class Gate {
 
         void setInputCount(int c);
         void setInputGate( std :: vector < GatePtr > v);
+
         void addInputGate(GatePtr g){
             inputGate.push_back(g);
             inputGateId.push_back(g->getGateId());
         }
+        
         void addInputGateId(int i){
             inputGateId.push_back(i);
         }
 
-        //void setOutputGate (GatePtr g);
-        //void setOutputGateId(int i){
-        //     outputGateId = i;
-        //}
-
-
         void printGate();
-
-
 };
 
 #endif

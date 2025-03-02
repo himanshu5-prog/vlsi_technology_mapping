@@ -5,11 +5,6 @@ LibraryCells :: LibraryCells (){
 }
 
 LibraryCells :: ~LibraryCells(){
-    /*
-    for (auto elem: techCell){
-        delete elem.root;
-    }
-    */
 }
 
 GatePtr

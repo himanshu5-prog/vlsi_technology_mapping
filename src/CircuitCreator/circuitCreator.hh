@@ -22,6 +22,5 @@ bool checkOutputPad(GatePtr gate);
 bool checkInputPad(GatePtr gate);
 bool checkGate(GatePtr gate);
 bool checkGateWrapper(GatePtr gate);
-GateStats* getStats(Gate gate);
 
 #endif
