@@ -8,17 +8,24 @@
 typedef Gate* GatePtr;
 class Netlist {
   GatePtr m_rootNetlist;
-  int m_groupCount;
-  int m_gateID;
 
   public:
+    //Constructor and destructor
     Netlist();
     ~Netlist();
+    //--------------------------------
+    // Methods to create netlist
+    // These are four available netlists which can be used. Note, only netlist can be used.
+    // Additional netlist can be created by adding the method in this class
     void createNetlist_2();
     void createSimpleCircuit();
     void createLogicAOI21Rotated();
     void createSimpleNor();
+
+    //Print method
     void print();
+
+    // Get method
     GatePtr getRootNetlist();
 };
 

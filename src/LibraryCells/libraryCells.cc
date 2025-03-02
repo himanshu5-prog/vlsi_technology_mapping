@@ -9,6 +9,14 @@ LibraryCells :: ~LibraryCells(){
 
 GatePtr
 LibraryCells :: createNotGate(){
+
+    /*
+        OUT
+         | 
+        NOT
+         |
+        IN
+    */
     GatePtr outputPad = createPrimitivePad (0,OUTPUT);
     GatePtr notGate = createPrimitiveNotGate(1);
 
@@ -23,6 +31,14 @@ LibraryCells :: createNotGate(){
 
 GatePtr
 LibraryCells :: createNandGate (){
+    /*
+        OUT
+         |
+        NAND
+       /    \
+      IN     IN
+    
+    */
     GatePtr outputPad = createPrimitivePad (0, OUTPUT);
     GatePtr nandGate = createPrimitiveNandGate(1);
 
@@ -39,6 +55,15 @@ LibraryCells :: createNandGate (){
 
 GatePtr
 LibraryCells :: createAndGate(){
+    /*
+        OUT
+         |
+        NOT
+         |
+        NAND 
+       /    \
+      IN     IN
+    */
     GatePtr outputPad = createPrimitivePad (0, OUTPUT);
     GatePtr notGate = createPrimitiveNotGate(1);
 
@@ -58,6 +83,19 @@ LibraryCells :: createAndGate(){
 
 GatePtr
 LibraryCells :: createNorGate (){
+
+    /*
+            OUT
+             |
+            NOT
+             |
+            NAND
+           /    \
+          NOT    NOT
+           |      |
+           IN     IN
+    
+    */
     GatePtr outputPad = createPrimitivePad (0, OUTPUT);
     GatePtr notGate_0 = createPrimitiveNotGate(1);
 
@@ -82,6 +120,15 @@ LibraryCells :: createNorGate (){
 
 GatePtr
 LibraryCells :: createOrGate() {
+    /*
+           OUT
+            |
+           NAND
+         /    \
+        NOT    NOT
+         |      |
+        IN     IN
+    */
     GatePtr outputPad = createPrimitivePad (0, OUTPUT);
     GatePtr nandGate = createPrimitiveNandGate(1);
 
@@ -104,6 +151,17 @@ LibraryCells :: createOrGate() {
 
 GatePtr
 LibraryCells :: createAOI21() {
+    /*
+        OUTPUT
+            |
+           NOT
+            |
+           NAND
+          /    \
+        NAND    NOT
+        /  \     |
+      IN   IN    IN
+    */
     GatePtr outputPad = createPrimitivePad (0, OUTPUT);
     GatePtr notGate_1 = createPrimitiveNotGate(1);
 
@@ -135,6 +193,17 @@ LibraryCells :: createAOI21() {
 
 GatePtr
 LibraryCells :: createAOI21_rotated() {
+    /*
+        OUTPUT
+            |
+           NOT
+            |
+           NAND
+          /    \
+        NOT    NAND
+         |      /  \
+        IN     IN  IN
+    */
     GatePtr outputPad = createPrimitivePad (0, OUTPUT);
     GatePtr notGate_1 = createPrimitiveNotGate(1);
 
@@ -170,6 +239,18 @@ LibraryCells :: createAOI21_rotated() {
 
 GatePtr
 LibraryCells :: createAOI22() {
+
+    /*
+        OUTPUT
+            |
+           NOT
+            |
+           NAND
+          /    \
+        NAND    NAND
+        /  \     /  \
+      IN   IN   IN   IN
+    */
     GatePtr outputPad = createPrimitivePad (0, OUTPUT);
     GatePtr notGate_1 = createPrimitiveNotGate(1);
 

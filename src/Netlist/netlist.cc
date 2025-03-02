@@ -1,8 +1,7 @@
 #include "netlist.hh"
 
 Netlist::Netlist(){
-    m_groupCount = 0;
-    m_gateID = 0;
+    m_rootNetlist = nullptr;
 }
 
 GatePtr
@@ -12,10 +11,22 @@ Netlist :: getRootNetlist(){
 
 void
 Netlist :: createSimpleCircuit(){
+    /*
+          OUTPUT
+            |
+           NOT
+            |
+           NAND
+          /    \
+        IN      IN
+    */
     // Create output pad. Each netlist will have only 1 output pad
     GatePtr outputPad = createPrimitivePad(100, OUTPUT);
     
+    // Create Not gate
     GatePtr notGate = createPrimitiveNotGate(101);
+
+    // Create Nand gate
     GatePtr nandGate = createPrimitiveNandGate(102);
     outputPad->addInputGate(notGate);
 
@@ -31,6 +42,17 @@ Netlist :: createSimpleCircuit(){
 
 void
 Netlist :: createLogicAOI21Rotated(){
+    /*
+            OUTPUT
+                |
+               NOT
+                |
+               NAND
+              /    \
+            NOT    NAND
+             |      /  \
+            IN     IN  IN    
+    */
     GatePtr outputPad = createPrimitivePad(100, OUTPUT);
     GatePtr notGate = createPrimitiveNotGate(101);
     GatePtr nandGate = createPrimitiveNandGate(102);
@@ -155,6 +177,17 @@ Netlist :: createNetlist_2(){
 }
 
 void Netlist :: createSimpleNor(){
+    /*
+        OUTPUT
+          |
+         NOT
+          |
+         NAND
+        /    \
+      NOT    NOT
+       |      |
+      IN      IN
+    */
     GatePtr outputPad = createPrimitivePad(120, OUTPUT);
     GatePtr notGate = createPrimitiveNotGate(121);
 
