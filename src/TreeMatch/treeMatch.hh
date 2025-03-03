@@ -84,7 +84,6 @@ class TreeMatch {
         //-------------------------------------
         // Helper function------------------------------
         inline void setDebugMode(){m_debugMode = true;}
-        bool allInputPadFanIn(GatePtr gate);
         //---------------------------------------------
         // Creating mapped netlist
         void createMappedNetlist();

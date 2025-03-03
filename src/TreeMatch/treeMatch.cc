@@ -75,6 +75,7 @@ TreeMatch :: init(){
 
 }
 
+// Perform tree matching between tech cell and netlist
 void
 TreeMatch :: doMatching(){
     GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
@@ -105,6 +106,7 @@ TreeMatch :: traverseNetlist (TechCell techCellMap,  GatePtr techCell, GatePtr c
         std :: cout << "traverseNetlist :: Matching cell id: " << currentNode->getGateId() << ", cell type: " << getStringGateType (currentNode->getGateType())
         << " with tech cell: " <<  getStringGateType( techCell->getGateType()) << ", matched: " << isMatch<<"\n";
     }
+    
     MappedInfo m;
     if (isMatch){
         m.leafNode = v;
@@ -174,7 +176,7 @@ TreeMatch :: matchTree (GatePtr techCell, GatePtr netlist, std :: vector<GatePtr
     assert (techCell->getInputCount() <= 2); 
     return false;
 }
-
+//-----------------------------------------------------------------------------------------------
 void
 TreeMatch :: print() const{
     
@@ -220,20 +222,6 @@ TreeMatch :: printValidMapping() const{
         }
 
     }
-}
-
-bool
-TreeMatch :: allInputPadFanIn(GatePtr gate){
-    std :: vector <GatePtr> fanin;
-    fanin = gate->getInputGate();
-
-    for (GatePtr elem: fanin){
-        if (elem->getGateType() != INPUT){
-            return false;
-        }
-    }
-
-    return true;
 }
 
 int
@@ -316,6 +304,7 @@ void TreeMatch :: printMinCostMapping() const{
     }
 }
 
+// Perform minimum cost tree covering
 void
 TreeMatch :: performMinimumCostTreeCover(){
     m_minimumCost = getMinCost();
@@ -339,6 +328,8 @@ TreeMatch :: run(){
     createMappedNetlistMap();
 }
 
+// Create Logical to Mapped netlist hashmap
+// This hashmap is used to create the mapped netlist
 void
 TreeMatch :: createMappedNetlist(){
     GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
@@ -387,7 +378,9 @@ TreeMatch :: createMappedNetlistMap(){
     assert(m_mapLogicalToMapped.find(netListGate) != m_mapLogicalToMapped.end()); // gate should be in the hash-map
     helperFunctionCreateNetlistMap(netListGate);
 }
-
+//-----------------------------------------------------------
+// Create hashmap between mapped gate and input mapped gate
+// This hashmap is used to create the mapped netlist
 void
 TreeMatch :: helperFunctionCreateNetlistMap(GatePtr gate){
 
@@ -405,6 +398,8 @@ TreeMatch :: helperFunctionCreateNetlistMap(GatePtr gate){
     }
     
 }
+//-----------------------------------------------------------
+// Print the mapped netlist
 void
 TreeMatch :: printMappedNetlist() const{
     //GatePtr netListGate = (m_inputNetlist->getInputGate())[0];
@@ -424,3 +419,4 @@ TreeMatch :: printMappedNetlist() const{
     }
 
 }
+//-----------------------------------------------------------
